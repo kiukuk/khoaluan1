@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/hopdong.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item active">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item ">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+ 
+        </nav>
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Sidebar (Filters) -->
+            <aside class="sidebar">
+                <h2>Hợp đồng</h2>
+                <div class="dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown('value')">
+                        <h3>Giá trị hợp đồng</h3>
+                        <span class="dropdown-icon"><img src="../Public/img/thanhso.png" alt=""></span>
+                    </div>
+                    <div class="dropdown-content" id="value">
+                        <label>Từ</label>
+                        <input type="text" id="value-from" placeholder="0" />
+                        <label>Đến</label>
+                        <input type="text" id="value-to" placeholder="0" />
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown('status')">
+                        <h3>Trạng thái</h3>
+                        <span class="dropdown-icon"><img src="../Public/img/thanhso.png" alt=""></span>
+                    </div>
+                    <div class="dropdown-content" id="status">
+                        <label><input type="checkbox" value="Chưa gửi" /> Chưa gửi</label>
+                        <label><input type="checkbox" value="Chưa thanh toán" /> Chưa thanh toán</label>
+                        <label><input type="checkbox" value="Đã thanh toán một phần" /> Đã thanh toán một phần</label>
+                        <label><input type="checkbox" value="Quá hạn" /> Quá hạn</label>
+                        <label><input type="checkbox" value="Đã thanh toán" /> Đã thanh toán</label>
+
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <div class="content-header">
+                    <div class="search-add">
+                        <div class="search-bar">
+                            
+                            <img src="../Public/img/search-normal.png"
+                                alt="Search" class="search-icon" />
+                            <input type="text" placeholder="Tìm kiếm" id="search-input" />
+                        </div>
+                        <a href="add_contract.html" id="action-button" class="btn-add btn-action">Thêm hợp đồng</a>
+
+
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="contract-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all" /></th>
+                                <th>Mã hợp đồng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Số điện thoại</th>
+                                <th>Khu vực</th>
+                                <th>Từ ngày</th>
+                                <th>Đến ngày</th>
+                                <th>Ngày ký HD</th>
+                                <th>Nguồn đến</th>
+                                <th>Giá trị hợp đồng</th>
+                                <th>Nhân viên phụ trách</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contract-table-body">
+                        </tbody>
+                    </table>
+                    <div id="no-data-message" class="no-data-message" style="display: none;">
+                        <span class="no-data-icon"><img src="../Public/img/search-normal.png" alt=""></span>
+                        <p>Không có kết quả tìm kiếm phù hợp</p>
+                    </div>
+                </div>
+
+                <!-- Contract Info Modal -->
+                <div id="contract-info-modal" class="modal">
+                    <div class="modal-content info-modal-content">
+                        <span class="close-modal info-close-modal">×</span>
+                        <h3>Thông tin hợp đồng</h3>
+                        <div class="info-details">
+                            <div class="info-column">
+                                <p><strong>Mã hợp đồng:</strong> <span id="info-contract-id"></span></p>
+                                <p><strong>Tên khách hàng:</strong> <span id="infoCustomerName"></span></p>
+                                <p><strong>Giá trị hợp đồng:</strong> <span id="infoValue"></span></p>
+                                <p><strong>Trạng thái:</strong> <span id="infoStatus"></span></p>
+                                <p><strong>Ngày ký hợp đồng:</strong> <span id="infoSignDate"></span></p>
+                                <p><strong>Ghi chú:</strong> <span id="infoNote"></span></p>
+                                <p><strong>Nhân viên phụ trách:</strong> <span id="infoStaff"></span></p>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button id="edit-contract" class="btn-edit">Chỉnh sửa</button>
+                            <button id="delete-from-info" class="btn-delete">Xóa</button>
+                            <button class="btn-cancel info-cancel">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Confirmation Modal -->
+                <div id="delete-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">×</span>
+                        <p id="delete-message"></p>
+                        <div class="modal-actions">
+                            <button id="confirm-delete" class="btn-confirm">Đồng ý</button>
+                            <button id="cancel-delete" class="btn-cancel">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (Fixed Footer) -->
+                <div class="pagination fixed-footer">
+                    <span id="result-count">Có 0 kết quả</span>
+                    <div class="pagination-controls">
+                        <button id="prev-page">
+                            &lt;</button>
+                        <button id="current-page" class="active">1</button>
+                        <button id="next-page">></button>
+                    </div>
+                    <span>10/trang</span>
+                    <span id="go-to-page">Đi đến trang 1</span>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const userId = queryParams.get("user_id");
+        const roleId = queryParams.get("role_id"); // ⬅️ Dòng bị thiếu
+        // Lấy user_id và role_id từ URL hiện tại
+        const urlParams = new URLSearchParams(window.location.search);
+        // Hàm chuyển trang đúng thư mục
+        function navigateTo(page) {
+            if (userId && roleId) {
+                window.location.href = `/1/Views/${page}?user_id=${userId}&role_id=${roleId}`;
+            } else {
+                alert("Thiếu user_id hoặc role_id. Không thể chuyển trang!");
+            }
+        }
+        if (userId) {
+            fetch(`../Controllers/get_user_by_id.php?user_id=${userId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.full_name) {
+                        document.getElementById("userFullName").textContent = data.full_name;
+                    } else {
+                        document.getElementById("userFullName").textContent = "Người dùng";
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi tải tên người dùng:", err);
+                    document.getElementById("userFullName").textContent = "Không rõ";
+                });
+        }
+        // Dropdown toggle function
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            const icon = content.previousElementSibling.querySelector('.dropdown-icon');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            img.src = content.style.display === 'none' ? '../Public/img/eye.png' : '../Public/img/eye.png';
+            
+        }
+
+        // Handle checkbox selection and toggle action button
+        const actionButton = document.getElementById('action-button');
+        const selectAllCheckbox = document.getElementById('select-all');
+        const deleteModal = document.getElementById('delete-modal');
+        const confirmDeleteBtn = document.getElementById('confirm-delete');
+        const cancelDeleteBtn = document.getElementById('cancel-delete');
+        const closeModal = document.querySelector('.close-modal');
+        const deleteMessage = document.getElementById('delete-message');
+        const contractTableBody = document.querySelector('#contract-table tbody');
+        const noDataMessage = document.getElementById('no-data-message');
+        const tableWrapper = document.querySelector('.table-wrapper');
+        const resultCount = document.getElementById('result-count');
+
+        // Contract Info Modal elements
+        const contractInfoModal = document.getElementById('contract-info-modal');
+        const infoCloseModal = document.querySelector('.info-close-modal');
+        const infoCancelBtn = document.querySelector('.info-cancel');
+        const editContractBtn = document.getElementById('edit-contract');
+        const deleteFromInfoBtn = document.getElementById('delete-from-info');
+
+        // Filter elements
+        const statusCheckboxes = document.querySelectorAll('#status input[type="checkbox"]');
+        const valueFromInput = document.getElementById('value-from');
+        const valueToInput = document.getElementById('value-to');
+        const searchInput = document.getElementById('search-input');
+
+        // Pagination elements
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const currentPageSpan = document.getElementById('current-page');
+        const goToPageSpan = document.getElementById('go-to-page');
+
+        // Store all contract rows for filtering
+        let allRows = [];
+        let filteredRows = [];
+        let currentRow = null; // To store the row being deleted from info modal
+        const itemsPerPage = 10;
+        let currentPage = 1;
+        let actionButtonClickHandler = null;
+
+
+        function updateActionButton() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+
+            // Gỡ event cũ nếu có
+            if (actionButtonClickHandler) {
+                actionButton.removeEventListener('click', actionButtonClickHandler);
+            }
+
+            if (checkedBoxes.length > 0) {
+                actionButton.textContent = 'Xóa hợp đồng';
+                actionButton.classList.remove('btn-add');
+                actionButton.classList.add('btn-delete');
+                actionButton.href = '#';
+
+                actionButtonClickHandler = function (e) {
+                    e.preventDefault(); // Ngăn submit link
+                    showDeleteModal();
+                };
+                actionButton.addEventListener('click', actionButtonClickHandler);
+
+            } else {
+                actionButton.textContent = '+ Thêm hợp đồng';
+                actionButton.classList.remove('btn-delete');
+                actionButton.classList.add('btn-add');
+                actionButton.href = `add_contract.html?user_id=${userId}&role_id=${roleId}`;
+
+                // Không gán onclick mới nữa!
+                actionButtonClickHandler = null;
+            }
+        }
+
+
+
+
+        function showContractInfoModal(contractCode) {
+            const contracts = JSON.parse(sessionStorage.getItem("contracts")) || [];
+            const contract = contracts.find(c => c.contract_code === contractCode);
+            if (!contract) return;
+
+            document.getElementById("info-contract-id").textContent = contract.contract_code || "Không có";
+            document.getElementById("infoCustomerName").textContent = contract.customer_name || "Không có";
+            document.getElementById("infoValue").textContent = (contract.value || 0).toLocaleString("vi-VN") + " VNĐ";
+            document.getElementById("infoStatus").textContent = contract.status || "Không có";
+            document.getElementById("infoSignDate").textContent = contract.signing_date || "Không có";
+            document.getElementById("infoNote").textContent = contract.note || "Không có ghi chú";
+            document.getElementById("infoStaff").textContent = contract.staff_in_charge_name || "Không có";
+
+            document.getElementById("contract-info-modal").style.display = "flex";
+        }
+
+
+        function updateContract() {
+            const contractData = {
+                customer_name: document.getElementById("infoCustomerName").textContent,
+                value: parseFloat(document.getElementById("infoValue").textContent.replace(/\D/g, '')),
+                status: document.getElementById("infoStatus").textContent,
+                signing_date: document.getElementById("infoSignDate").textContent,
+                note: document.getElementById("infoNote").textContent,
+                staff_in_charge_name: document.getElementById("infoStaff").textContent
+            };
+
+            fetch('../Controllers/update_contract.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(contractData, user_id,
+                    role_id
+                )
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Cập nhật hợp đồng thành công!');
+                        location.reload(); // reload lại dữ liệu
+                    } else {
+                        alert('Cập nhật thất bại: ' + data.message);
+                    }
+                })
+                .catch(err => {
+                    console.error('Lỗi cập nhật:', err);
+                    alert('Có lỗi xảy ra khi cập nhật hợp đồng');
+                });
+        }
+
+        function closeContractInfoModal() {
+            contractInfoModal.style.display = 'none';
+            currentRow = null;
+        }
+
+        function showDeleteModal() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+            if (checkedBoxes.length > 0) {
+                let message = '';
+                if (checkedBoxes.length === 1) {
+                    const contractId = checkedBoxes[0].getAttribute('data-id');
+                    message = `Bạn chắc chắn muốn xóa hợp đồng ${contractId} khỏi bảng hợp đồng không?`;
+                } else if (checkedBoxes.length === 2) {
+                    const contractIds = Array.from(checkedBoxes).map(box => box.getAttribute('data-id'));
+                    message = `Bạn chắc chắn muốn xóa hợp đồng ${contractIds.join(', ')} khỏi bảng hợp đồng không?`;
+                } else {
+                    message = `Bạn chắc chắn muốn xóa tất cả hợp đồng đã chọn khỏi bảng hợp đồng không?`;
+                }
+                deleteMessage.textContent = message;
+                deleteModal.style.display = 'block';
+            }
+        }
+
+        function showDeleteModalFromInfo() {
+            if (currentRow) {
+                const contractId = currentRow.cells[1].textContent;
+                deleteMessage.textContent = `Bạn chắc chắn muốn xóa hợp đồng ${contractId} khỏi bảng hợp đồng không?`;
+                deleteModal.style.display = 'block';
+                closeContractInfoModal();
+            }
+        }
+        function renderTable(contracts) {
+            const tableBody = document.getElementById("contract-table-body");
+            tableBody.innerHTML = "";
+
+            contracts.forEach(contract => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+            <td><input type="checkbox" class="row-checkbox" data-id="${contract.contract_code}" /></td>
+            <td>${contract.contract_code}</td>
+            <td class="customer-name" onclick="showContractInfoModal('${contract.contract_code}')">${contract.customer_name}</td>
+            <td>${contract.phone_number || ''}</td>
+            <td>${contract.region || ''}</td>
+            <td>${contract.start_date || ''}</td>
+            <td>${contract.end_date || ''}</td>
+            <td>${contract.signing_date || ''}</td>
+            <td>${contract.source || ''}</td>
+            <td>${contract.value?.toLocaleString() || '0'}</td>
+            <td>${contract.staff_in_charge_name || ''}</td>
+            <td>${contract.status || ''}</td>
+        `;
+                tableBody.appendChild(row);
+                const checkbox = row.querySelector('.row-checkbox');
+                checkbox.addEventListener('change', updateActionButton);
+            });
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Fetch dữ liệu hợp đồng
+            fetch("../Controllers/get_contracts.php")
+                .then(res => res.json())
+                .then(data => {
+                    sessionStorage.setItem("contracts", JSON.stringify(data));
+                    renderTable(data);
+                })
+                .catch(error => {
+                    console.error("Lỗi khi tải dữ liệu hợp đồng:", error);
+                });
+
+            // 2. Bắt sự kiện nút chỉnh sửa hợp đồng
+            const editContractBtn = document.getElementById("edit-contract");
+            if (editContractBtn) {
+                editContractBtn.addEventListener('click', () => {
+                    const contractCode = document.getElementById("info-contract-id").textContent.trim();
+                    if (!contractCode) {
+                        alert("Không tìm thấy mã hợp đồng để chỉnh sửa!");
+                        return;
+                    }
+                    const params = new URLSearchParams(window.location.search);
+                    const userId = params.get("user_id");
+                    const roleId = params.get("role_id");
+
+                    if (!userId || !roleId) {
+                        alert("Thiếu user_id hoặc role_id!");
+                        return;
+                    }
+
+                    // Chuyển hướng sang trang update_contract.php kèm theo mã hợp đồng
+                    window.location.href = `/1/Controllers/update_contract.html?contract_code=${contractCode}&user_id=${userId}&role_id=${roleId}`;
+                });
+
+            }
+
+
+
+        });
+
+        function closeDeleteModal() {
+            deleteModal.style.display = 'none';
+        }
+
+        function filterContracts() {
+            const selectedStatuses = Array.from(statusCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const valueFrom = parseFloat(valueFromInput.value.replace(/,/g, '')) || 0;
+            const valueTo = parseFloat(valueToInput.value.replace(/,/g, '')) || Infinity;
+            const searchQuery = searchInput.value.toLowerCase();
+
+            filteredRows = allRows.filter(row => {
+                const status = row.cells[11].textContent.trim();
+                const valueText = row.cells[9].textContent.replace(/,/g, '');
+                const value = parseFloat(valueText);
+                const contractId = row.cells[1].textContent.toLowerCase();
+                const customerName = row.cells[2].textContent.toLowerCase();
+
+                const statusMatch = selectedStatuses.length === 0 || selectedStatuses.includes(status);
+                const valueMatch = value >= valueFrom && value <= valueTo;
+                const searchMatch = contractId.includes(searchQuery) || customerName.includes(searchQuery);
+
+                return statusMatch && valueMatch && searchMatch;
+            });
+
+            currentPage = 1; // Reset to first page on filter
+            renderPaginatedTable();
+        }
+
+        function renderPaginatedTable() {
+            contractTableBody.innerHTML = '';
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedRows = filteredRows.slice(startIndex, endIndex);
+
+            paginatedRows.forEach(row => {
+                contractTableBody.appendChild(row);
+            });
+
+            // Update customer names event listeners
+            const customerNames = document.querySelectorAll('.customer-name');
+            customerNames.forEach(name => {
+                name.addEventListener('click', () => {
+                    const row = name.closest('tr');
+                    showContractInfoModal(row);
+                });
+            });
+
+            // Update checkboxes event listeners
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateActionButton);
+            });
+
+            updateTableVisibility();
+            updatePagination();
+        }
+
+        function updateTableVisibility() {
+            const rowCount = filteredRows.length;
+            if (rowCount === 0) {
+                tableWrapper.querySelector('table').style.display = 'none';
+                noDataMessage.style.display = 'flex';
+            } else {
+                tableWrapper.querySelector('table').style.display = 'table';
+                noDataMessage.style.display = 'none';
+            }
+            resultCount.textContent = `Có ${rowCount} kết quả`;
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+            currentPageSpan.textContent = currentPage;
+            goToPageSpan.textContent = `Đi đến trang ${currentPage}`;
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+            prevPageBtn.classList.toggle('active', currentPage !== 1);
+            nextPageBtn.classList.toggle('active', currentPage !== totalPages && totalPages !== 0);
+        }
+
+        function deleteSelectedRows() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+            const contractCodesToDelete = Array.from(checkedBoxes).map(box => box.getAttribute('data-id'));
+
+            if (contractCodesToDelete.length === 0) {
+                alert("Bạn chưa chọn hợp đồng nào để xóa!");
+                return;
+            }
+
+            if (!confirm(`Bạn có chắc chắn muốn xóa ${contractCodesToDelete.length} hợp đồng đã chọn?`)) {
+                return;
+            }
+
+            fetch('../Controllers/delete_multiple_contracts.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ contract_codes: contractCodesToDelete })
+            })
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        alert('Xóa thành công!');
+                        window.location.reload();
+                    } else {
+                        console.error("Server error:", data.message);
+                        alert('Xóa thất bại: ' + data.message);
+                    }
+                })
+                .catch(err => {
+                    console.error('Fetch error:', err);
+                    alert('Có lỗi xảy ra khi gửi yêu cầu xóa hợp đồng');
+                });
+        }
+
+
+        function deleteRowFromInfo() {
+            if (currentRow) {
+                const contractId = currentRow.cells[1].textContent;
+
+                // Update sessionStorage
+                let storedContracts = JSON.parse(sessionStorage.getItem("contracts")) || [];
+                storedContracts = storedContracts.filter(contract => contract.id !== contractId);
+                sessionStorage.setItem("contracts", JSON.stringify(storedContracts));
+
+                // Update allRows and re-render
+                allRows = allRows.filter(row => row.cells[1].textContent !== contractId);
+                filterContracts();
+                closeDeleteModal();
+            }
+        }
+
+
+
+        // Event Listeners
+        selectAllCheckbox.addEventListener('change', () => {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.closest('tr').style.display !== 'none') {
+                    checkbox.checked = selectAllCheckbox.checked;
+                }
+            });
+            updateActionButton();
+        });
+
+        confirmDeleteBtn.addEventListener('click', () => {
+            if (currentRow) {
+                deleteRowFromInfo();
+            } else {
+                deleteSelectedRows();
+            }
+        });
+
+        cancelDeleteBtn.addEventListener('click', closeDeleteModal);
+        closeModal.addEventListener('click', closeDeleteModal);
+
+        infoCloseModal.addEventListener('click', closeContractInfoModal);
+        infoCancelBtn.addEventListener('click', closeContractInfoModal);
+        editContractBtn.addEventListener('click', () => {
+            window.location.href = `edit-contract.html?id=${currentRow.cells[1].textContent}`;
+        });
+        deleteFromInfoBtn.addEventListener('click', () => {
+            const contractCodeElement = document.getElementById("info-contract-id");
+            if (!contractCodeElement) {
+                alert("Không tìm thấy mã hợp đồng!");
+                return;
+            }
+            const contractCode = contractCodeElement.textContent.trim();
+            if (!contractCode) {
+                alert("Mã hợp đồng không hợp lệ!");
+                return;
+            }
+
+            if (confirm(`Bạn có chắc chắn muốn xóa hợp đồng ${contractCode}?`)) {
+                fetch("../Controllers/delete_contract.php", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `contract_code=${contractCode}`
+                })
+                    .then(res => {
+                        if (!res.ok) {
+                            throw new Error(`HTTP error! Status: ${res.status}`);
+                        }
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert('Xóa hợp đồng thành công!');
+                            window.location.reload();
+                        } else {
+                            console.error("Lỗi server:", data.message);
+                            alert('Xóa thất bại: ' + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Lỗi fetch:', err);
+                        alert('Có lỗi xảy ra khi xóa hợp đồng');
+                    });
+            }
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === deleteModal) {
+                closeDeleteModal();
+            }
+            if (event.target === contractInfoModal) {
+                closeContractInfoModal();
+            }
+        });
+
+        statusCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterContracts);
+        });
+
+        valueFromInput.addEventListener('input', filterContracts);
+        valueToInput.addEventListener('input', filterContracts);
+        searchInput.addEventListener('input', filterContracts);
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPaginatedTable();
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPaginatedTable();
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

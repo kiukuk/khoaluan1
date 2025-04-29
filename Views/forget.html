@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASIASOFT - Quên mật khẩu</title>
+    <link rel="stylesheet" href="../Public/css/login.css">
+</head>
+<script>
+    function handleRequest(event) {
+        event.preventDefault(); // Ngăn form submit thật
+        // Đổi nội dung dòng thông báo
+        document.getElementById('instruction-text').innerText = "Yêu cầu đã được gửi đi. Vui lòng đợi phản hồi!";
+        // Có thể gửi form thật nếu muốn (ví dụ: setTimeout để gửi sau 2s), hoặc để người dùng bấm thêm gì đó.
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div class="illustration">
+            <img src="../Public/img/Group 37338 (1).png" alt="Illustration">
+        </div>
+
+        <div class="login-box">
+            <div class="language-selector">
+                <button class="lang-btn">Việt Nam ▾</button>
+                <div class="lang-dropdown">
+                    <div>Tiếng Việt</div>
+                    <div>English</div>
+                </div>
+            </div>
+
+            <form class="login-form" action="../Controllers/forgot-password.php" method="POST">
+                <h1 class="logo">
+                    <img src="../Public/img/image 1.png" alt="Logo" />
+                </h1>
+
+                <h2 style="font-size: 24px; margin-bottom: 10px;">Quên mật khẩu</h2>
+                <h3 style="font-size: 16px; margin-bottom: 10px;">Vui lòng nhập theo yêu cầu</h3>
+                <input type="text" name="username" placeholder="Email " required />
+                <p style="font-size: 14px; color: #555; margin-bottom: 30px;">
+                    Vui lòng chọn yêu cầu để quản trị viên để đổi lại mật khẩu của bạn.
+                </p>
+
+                <button type="submit" class="login-btn">Yêu cầu</button>
+
+                <div style="margin-top: 20px;">
+                    <a href="login.html" style="font-size: 14px; color: #007bff; text-decoration: none;">Trở lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

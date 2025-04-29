@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../Public/css/add-opportunity.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item ">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+        
+        </nav>
+
+        <!-- Breadcrumb and Action Buttons Table -->
+        <div class="breadcrumb-table-wrapper">
+            <table class="breadcrumb-table">
+                <tr>
+                    <td class="breadcrumb-cell">
+                        <div class="breadcrumb">
+                            <a href="dulieu.html" class="breadcrumb-link">Cơ hội khách hàng</a>
+                            <span class="breadcrumb-separator">></span>
+                            <span class="breadcrumb-current">Thêm khách hàng</span>
+                        </div>
+                    </td>
+                    <td class="action-buttons-cell">
+                        <div class="action-buttons">
+                            <button class="btn-save" onclick="saveData()">Lưu</button>
+                            <button class="btn-cancel" onclick="cancel()">Hủy bỏ</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="tables-container">
+                <!-- Customer Info Table -->
+                <div class="customer-info-table-wrapper">
+                    <table class="customer-info-table">
+                        <tr>
+                            <th>Tên khách hàng</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="input-field" id="customerName"
+                                    placeholder="Nhập tên khách hàng" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ngày tạo</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date" class="input-field" id="createdDate" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ngày cập nhật gần nhất</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="input-field" id="lastUpdated" value="2025-04-20" readonly />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Ngày chăm sóc gần nhất</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="input-field" id="lastCared" value="2025-04-19" readonly />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Trạng thái</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="input-field" id="status">
+                                    <option value="moi-nhat">Mới nhất</option>
+                                    <option value="tiep-can">Tiếp cận</option>
+                                    <option value="tiem-nang">Tiềm năng</option>
+                                    <option value="chua-tiep-can">Chưa tiếp cận</option>
+                                    <option value="da-dat-lich">Đã đặt lịch</option>
+                                    <option value="thanh-cong">Thành công</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Nhân viên phụ trách</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="input-field" id="assignedStaff">
+                                    <option value="vu-thi-kieu-cuc">Vũ Thị Kiều Cúc</option>
+                                    <option value="nguyen-van-a">Nguyễn Văn A</option>
+                                    <option value="tran-thi-b">Trần Thị B</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Mức hoàn thiện hồ sơ</td>
+                        </tr>
+                        <tr>
+                            <td id="profileCompletion">0%</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Tabbed Content Table -->
+                <div class="tabbed-table-wrapper">
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab('customer-info')">Thông tin khách
+                            hàng</button>
+                        <button class="tab-button" onclick="showTab('notes')">Ghi chú</button>
+                        <button class="tab-button" onclick="showTab('appointments')">Lịch hẹn</button>
+                        <div class="tab-icons">
+                            <i class="fas fa-phone tab-icon"></i>
+                            <i class="fas fa-envelope tab-icon"></i>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="customer-info">
+                        <div class="columns-container">
+                            <!-- Column 1 -->
+                            <table class="tab-content-table column">
+                                <tr>
+                                    <td class="label">Mã khách hàng</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="customerCode" value="HLV000234"
+                                            readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Tên khách hàng</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="customerNameInfo"
+                                            placeholder="Nhập tên khách hàng" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Số điện thoại</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="phoneNumber"
+                                            placeholder="Nhập số điện thoại" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Nguồn khách hàng</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="customerSource"
+                                            placeholder="Tên nguồn" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- Column 2 -->
+                            <table class="tab-content-table column">
+                                <tr>
+                                    <td class="label">Lĩnh vực</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="field" placeholder="Tên lĩnh vực" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Khu vực</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="area" placeholder="Nhập khu vực" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Email</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="email" class="input-field" id="email" placeholder="Nhập email" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Nhóm khách hàng</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="input-field" id="customerGroup"
+                                            placeholder="Chọn nhóm" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- Notes Section -->
+                        <table class="tab-content-table full-width">
+                            <tr>
+                                <td class="label">Ghi chú/Bình luận/Tin nhắn từ khách</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <textarea class="input-field textarea-field" id="customerComments"
+                                        placeholder="Viết bình luận, sử dụng @mention để thông báo cho đồng nghiệp..."></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-content" id="notes" style="display: none;">
+                        <div class="editor-toolbar">
+                            <span class="description-label">Mô tả</span>
+                            <span class="format-label">Format</span>
+                            <button class="toolbar-btn" onclick="formatText('bold')"><b>B</b></button>
+                            <button class="toolbar-btn" onclick="formatText('italic')"><i>I</i></button>
+                            <button class="toolbar-btn" onclick="formatText('underline')"><u>U</u></button>
+                            <button class="toolbar-btn"><i class="fas fa-align-left"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-align-center"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-align-right"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-list-ul"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-list-ol"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-indent"></i></button>
+                            <button class="toolbar-btn"><i class="fas fa-outdent"></i></button>
+                        </div>
+                        <div class="editor-content" id="editorNotes" contenteditable="true"
+                            placeholder="Nhập nội dung ghi chú"></div>
+                    </div>
+                    <div class="tab-content" id="appointments" style="display: none;">
+                        <div class="calendar-header">
+                            <button class="nav-btn" onclick="changeWeek('prev')"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <span class="month-year">Tuần này</span>
+                            <button class="nav-btn" onclick="changeWeek('next')"><i
+                                    class="fas fa-chevron-right"></i></button>
+                            <button class="calendar-icon-btn" onclick="toggleDatePicker()"><i
+                                    class="fas fa-calendar-alt"></i></button>
+                            <input type="date" id="datePicker" class="date-picker" style="display: none;"
+                                onchange="updateWeekFromPicker(this.value)">
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid">
+                            <div class="calendar-row header-row">
+                                <div class="calendar-cell header-cell"></div>
+                                <div class="calendar-cell header-cell">Thứ 2<br><span class="day-number">21</span></div>
+                                <div class="calendar-cell header-cell">Thứ 3<br><span class="day-number">22</span></div>
+                                <div class="calendar-cell header-cell">Thứ 4<br><span class="day-number">23</span></div>
+                                <div class="calendar-cell header-cell">Thứ 5<br><span class="day-number">24</span></div>
+                                <div class="calendar-cell header-cell">Thứ 6<br><span class="day-number">25</span></div>
+                                <div class="calendar-cell header-cell">Thứ 7<br><span class="day-number">26</span></div>
+                                <div class="calendar-cell header-cell">Chủ nhật<br><span class="day-number">27</span>
+                                </div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">7 AM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '07:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '07:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">8 AM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '08:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '08:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">9 AM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '09:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '09:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">10 AM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '10:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '10:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">11 AM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '11:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '11:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">12 PM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '12:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '12:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">1 PM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '13:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '13:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">2 PM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '14:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '14:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">3 PM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '15:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '15:00')"></div>
+                            </div>
+                            <div class="calendar-row">
+                                <div class="calendar-cell time-cell">4 PM</div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-21', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-22', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-23', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-24', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-25', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-26', '16:00')"></div>
+                                <div class="calendar-cell" onclick="selectSlot(this, '2025-04-27', '16:00')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal for Appointment -->
+        <div class="modal" id="appointmentModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Tạo lịch hẹn</h2>
+                    <span class="close-btn" onclick="closeModal()">×</span>
+                </div>
+                <div class="modal-body">
+                    <div class="color-picker">
+                        <label>Chọn màu mẫu</label>
+                        <div class="color-options">
+                            <div class="color-box" style="background-color: #28A745;" onclick="selectColor('#28A745')">
+                            </div>
+                            <div class="color-box" style="background-color: #6F42C1;" onclick="selectColor('#6F42C1')">
+                            </div>
+                            <div class="color-box" style="background-color: #D4EDDA;" onclick="selectColor('#D4EDDA')">
+                            </div>
+                            <div class="color-box" style="background-color: #E9ECEF;" onclick="selectColor('#E9ECEF')">
+                            </div>
+                            <div class="color-box" style="background-color: #007BFF;" onclick="selectColor('#007BFF')">
+                            </div>
+                            <div class="color-box" style="background-color: #6C757D;" onclick="selectColor('#6C757D')">
+                            </div>
+                            <div class="color-box" style="background-color: #E3F2FD;" onclick="selectColor('#E3F2FD')">
+                            </div>
+                            <div class="color-box" style="background-color: #FFF3CD;" onclick="selectColor('#FFF3CD')">
+                            </div>
+                            <div class="color-box" style="background-color: #AEA8D3;" onclick="selectColor('#AEA8D3')">
+                            </div>
+                            <div class="color-box" style="background-color: #FD7E14;" onclick="selectColor('#FD7E14')">
+                            </div>
+                            <div class="color-box" style="background-color: #DC3545;" onclick="selectColor('#DC3545')">
+                            </div>
+                            <div class="color-box" style="background-color: #9B59B6;" onclick="selectColor('#9B59B6')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-section">
+                        <label>Ghi chú</label>
+                        <textarea id="appointmentNotes" placeholder="Ghi chú"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-save-modal" onclick="saveAppointment()">Lưu</button>
+                    <button class="btn-cancel-modal" onclick="closeModal()">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStartDate = new Date('2025-04-21'); // Ngày bắt đầu của tuần hiện tại
+        let selectedCell = null;
+        let selectedColor = null;
+        let appointments = []; // Mảng lưu các lịch hẹn
+
+        function showTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).style.display = 'block';
+
+            const clickedButton = Array.from(tabButtons).find(button => button.getAttribute('onclick') === `showTab('${tabId}')`);
+            clickedButton.classList.add('active');
+        }
+
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        // Add placeholder functionality for contenteditable div
+        const editorContent = document.querySelector('.editor-content');
+        const placeholderText = 'Nhập nội dung ghi chú';
+
+        if (editorContent) {
+            editorContent.addEventListener('focus', function () {
+                if (this.innerHTML === placeholderText) {
+                    this.innerHTML = '';
+                    this.style.color = '#555';
+                }
+            });
+
+            editorContent.addEventListener('blur', function () {
+                if (this.innerHTML.trim() === '') {
+                    this.innerHTML = placeholderText;
+                    this.style.color = '#999';
+                }
+            });
+
+            if (editorContent.innerHTML.trim() === '') {
+                editorContent.innerHTML = placeholderText;
+                editorContent.style.color = '#999';
+            }
+        }
+
+        // Calendar Functions
+        function toggleDatePicker() {
+            const datePicker = document.getElementById('datePicker');
+            datePicker.style.display = datePicker.style.display === 'none' ? 'inline-block' : 'none';
+            if (datePicker.style.display === 'inline-block') {
+                datePicker.focus();
+            }
+        }
+
+        function updateWeekFromPicker(dateString) {
+            const selectedDate = new Date(dateString);
+            const dayOfWeek = selectedDate.getDay();
+            const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek; // Tính ngày đầu tuần (Thứ 2)
+            currentStartDate = new Date(selectedDate);
+            currentStartDate.setDate(selectedDate.getDate() + diff);
+            updateCalendar();
+        }
+
+        function changeWeek(direction) {
+            const daysToAdd = direction === 'next' ? 7 : -7;
+            currentStartDate.setDate(currentStartDate.getDate() + daysToAdd);
+            updateCalendar();
+        }
+
+        function updateCalendar() {
+            const daysOfWeek = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật'];
+            const headerCells = document.querySelectorAll('.header-row .header-cell:not(:first-child)');
+            const calendarCells = document.querySelectorAll('.calendar-row:not(.header-row) .calendar-cell:not(.time-cell)');
+            const times = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
+
+            // Cập nhật tiêu đề ngày
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(currentStartDate);
+                date.setDate(currentStartDate.getDate() + i);
+                const day = date.getDate();
+                const month = date.getMonth() + 1;
+                const year = date.getFullYear();
+                headerCells[i].innerHTML = `${daysOfWeek[i]}<br><span class="day-number">${day}</span>`;
+
+                // Cập nhật ngày cho các ô lịch
+                const dateString = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                for (let j = 0; j < times.length; j++) {
+                    const cellIndex = j * 7 + i;
+                    calendarCells[cellIndex].setAttribute('onclick', `selectSlot(this, '${dateString}', '${times[j]}')`);
+                }
+            }
+
+            // Cập nhật nhãn "Tuần này"
+            const today = new Date('2025-04-21');
+            const startOfTodayWeek = new Date(today);
+            const todayDayOfWeek = today.getDay();
+            const todayDiff = todayDayOfWeek === 0 ? -6 : 1 - todayDayOfWeek;
+            startOfTodayWeek.setDate(today.getDate() + todayDiff);
+
+            const monthYearLabel = document.querySelector('.month-year');
+            if (currentStartDate.getTime() === startOfTodayWeek.getTime()) {
+                monthYearLabel.textContent = 'Tuần này';
+            } else {
+                const month = currentStartDate.getMonth() + 1;
+                const year = currentStartDate.getFullYear();
+                monthYearLabel.textContent = `Tuần ${month}/${year}`;
+            }
+        }
+
+        function selectSlot(cell, date, time) {
+            // Bỏ chọn ô trước đó nếu có
+            if (selectedCell) {
+                selectedCell.classList.remove('selected');
+            }
+
+            // Chọn ô hiện tại
+            cell.classList.add('selected');
+            selectedCell = cell;
+
+            // Lưu ngày và giờ được chọn
+            cell.dataset.date = date;
+            cell.dataset.time = time;
+
+            // Hiển thị modal
+            const modal = document.getElementById('appointmentModal');
+            modal.style.display = 'block';
+
+            // Điền thông tin hiện tại (nếu có) vào modal
+            selectedColor = cell.dataset.color || null;
+            const colorBoxes = document.querySelectorAll('.color-box');
+            colorBoxes.forEach(box => box.classList.remove('selected'));
+            if (selectedColor) {
+                const selectedBox = Array.from(colorBoxes).find(box => box.style.backgroundColor === selectedColor);
+                if (selectedBox) selectedBox.classList.add('selected');
+            }
+            document.getElementById('appointmentNotes').value = cell.dataset.notes || '';
+        }
+
+        function selectColor(color) {
+            selectedColor = color;
+            const colorBoxes = document.querySelectorAll('.color-box');
+            colorBoxes.forEach(box => box.classList.remove('selected'));
+            const selectedBox = Array.from(colorBoxes).find(box => box.style.backgroundColor === color);
+            if (selectedBox) selectedBox.classList.add('selected');
+        }
+
+        // Hàm tính độ sáng của màu (dựa trên công thức luminance)
+        function getLuminance(hexColor) {
+            // Chuyển hex sang RGB
+            const r = parseInt(hexColor.substr(1, 2), 16);
+            const g = parseInt(hexColor.substr(3, 2), 16);
+            const b = parseInt(hexColor.substr(5, 2), 16);
+            // Công thức luminance: 0.299R + 0.587G + 0.114B
+            return 0.299 * r + 0.587 * g + 0.114 * b;
+        }
+
+        function saveAppointment() {
+            if (selectedCell) {
+                // Lưu màu và ghi chú
+                if (selectedColor) {
+                    selectedCell.dataset.color = selectedColor;
+
+                    // Tính độ sáng của màu để chọn màu chữ phù hợp
+                    const luminance = getLuminance(selectedColor);
+                    const textColor = luminance > 128 ? '#333333' : '#FFFFFF';
+                    selectedCell.style.color = textColor;
+
+                    // Áp dụng màu nền nhạt (sử dụng CSS class để xử lý opacity)
+                    selectedCell.style.backgroundColor = selectedColor;
+
+                    // Áp dụng viền trái
+                    selectedCell.style.borderLeft = `4px solid ${selectedColor}`;
+                }
+
+                // Lưu và hiển thị ghi chú
+                const notes = document.getElementById('appointmentNotes').value;
+                selectedCell.dataset.notes = notes;
+                if (notes) {
+                    selectedCell.innerText = notes;
+                    selectedCell.setAttribute('title', notes);
+
+                    // Thêm lịch hẹn vào mảng appointments
+                    appointments.push({
+                        date: selectedCell.dataset.date,
+                        time: selectedCell.dataset.time,
+                        notes: notes,
+                        color: selectedColor
+                    });
+                } else {
+                    selectedCell.innerText = '';
+                    selectedCell.removeAttribute('title');
+                }
+            }
+            closeModal();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('appointmentModal');
+            modal.style.display = 'none';
+            selectedColor = null;
+            document.getElementById('appointmentNotes').value = '';
+        }
+
+        // Đóng modal khi nhấn ra ngoài
+        window.onclick = function (event) {
+            const modal = document.getElementById('appointmentModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        // Đồng bộ giá trị của 2 trường "Tên khách hàng"
+        const customerNameInput = document.getElementById('customerName');
+        const customerNameInfoInput = document.getElementById('customerNameInfo');
+        customerNameInput.addEventListener('input', function () {
+            customerNameInfoInput.value = this.value;
+        });
+        customerNameInfoInput.addEventListener('input', function () {
+            customerNameInput.value = this.value;
+        });
+
+        // Tính mức hoàn thiện hồ sơ
+        function calculateProfileCompletion() {
+            const fields = [
+                'customerName', 'createdDate', 'status', 'assignedStaff',
+                'customerCode', 'phoneNumber', 'customerSource', 'field',
+                'area', 'email', 'customerGroup', 'customerComments'
+            ];
+            let filledFields = 0;
+
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field && field.value.trim() !== '') {
+                    filledFields++;
+                }
+            });
+
+            const completionPercentage = Math.round((filledFields / fields.length) * 100);
+            document.getElementById('profileCompletion').textContent = `${completionPercentage}%`;
+        }
+
+        // Gắn sự kiện input để tính mức hoàn thiện hồ sơ
+        const inputFields = document.querySelectorAll('input, select, textarea');
+        inputFields.forEach(field => {
+            field.addEventListener('input', calculateProfileCompletion);
+        });
+
+        // Hàm lưu dữ liệu
+        function saveData() {
+            // Thu thập dữ liệu từ các trường
+            const customerData = {
+                customerName: document.getElementById('customerName').value,
+                createdDate: document.getElementById('createdDate').value,
+                lastUpdated: document.getElementById('lastUpdated').value,
+                lastCared: document.getElementById('lastCared').value,
+                status: document.getElementById('status').value,
+                assignedStaff: document.getElementById('assignedStaff').value,
+                profileCompletion: document.getElementById('profileCompletion').textContent,
+                customerCode: document.getElementById('customerCode').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                customerSource: document.getElementById('customerSource').value,
+                field: document.getElementById('field').value,
+                area: document.getElementById('area').value,
+                email: document.getElementById('email').value,
+                customerGroup: document.getElementById('customerGroup').value,
+                customerComments: document.getElementById('customerComments').value,
+                notes: document.getElementById('editorNotes').innerHTML,
+                appointments: appointments
+            };
+
+            // Lấy danh sách khách hàng hiện có từ localStorage
+            let customers = JSON.parse(localStorage.getsItem('customers')) || [];
+
+            // Thêm khách hàng mới vào danh sách
+            customers.push(customerData);
+
+            // Lưu lại vào localStorage
+            localStorage.setItem('customers', JSON.stringify(customers));
+
+            // Chuyển hướng về trang crm.html
+            window.location.href = 'dulieu.html';
+        }
+
+        // Hàm hủy bỏ
+        function cancel() {
+            // Chuyển hướng về trang crm.html mà không lưu dữ liệu
+            window.location.href = 'dulieu.html';
+        }
+    </script>
+</body>
+
+</html>

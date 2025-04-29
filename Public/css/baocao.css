@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Averta Std CY", sans-serif;
+}
+
+.main-container {
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    background: #f4f5f6;
+    position: relative;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    padding: 15px 50px;
+    background: #ffffff;
+    border-top: 1px solid #e5e8eb;
+    box-shadow: 0 0 30px rgba(26, 49, 104, 0.11);
+}
+
+.logo {
+    width: 145px;
+    height: 52px;
+}
+
+.menu-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.flag {
+    border-radius: 50%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user span {
+    color: #141414;
+    font-size: 16px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Menu */
+.cms-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    height: 60px;
+    padding: 6px 50px;
+    background: #007aff;
+    position: relative; /* Để định vị bảng */
+}
+
+.menu-link {
+    text-decoration: none;
+}
+
+.report-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    color: #fbfcfc;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+    background: #003c81;
+}
+
+.menu-item.active {
+    background: none;
+}
+
+.menu-item.selected {
+    background: #003c81;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Report Table */
+.report-table {
+    display: none; /* Ẩn mặc định, JavaScript sẽ xử lý hiển thị */
+    position: absolute;
+    top: 60px; /* Đặt ngay dưới toàn bộ thanh menu */
+    left: -55px; /* Căn giữa bảng so với menu-item */
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    width: 316px; /* Gấp đôi chiều rộng của menu-item */
+    z-index: 100; /* Đảm bảo bảng nổi lên trên các phần tử khác */
+}
+
+.table-row {
+    display: flex;
+    align-items: center;
+}
+
+.table-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    color: #141414;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.table-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #141414;
+    width: 100%;
+    transition: background 0.2s ease;
+}
+
+.table-link:hover {
+    background: #f4f5f6;
+}
+
+.table-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Nội dung chính */
+.content-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 50px;
+    gap: 20px;
+    height: calc(1080px - 140px - 50px); /* Trừ chiều cao của header, menu, và footer */
+    overflow-y: auto; /* Cho phép cuộn nội dung */
+}
+
+/* Bộ lọc */
+.filter-column {
+    width: 384px; /* 1/5 của 1920px */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-panel {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: #666;
+}
+
+.filter-content {
+    margin-top: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.date-group {
+    margin-bottom: 10px;
+}
+
+.date-group label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.filter-content input[type="date"],
+.filter-content input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e5e8eb;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.employee-search {
+    margin-bottom: 10px;
+}
+
+.checkbox-group {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Bảng dữ liệu chính */
+.data-table-container {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-title-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    gap: 0px; /* ← Điều chỉnh khoảng cách giữa .table-date và .table-title ở đây */
+}
+
+.table-date {
+    font-size: 14px;
+    color: #666;
+    order: -1;
+    /* Bỏ margin-right nếu dùng gap */
+}
+
+.table-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 350px; /* ← Tạo khoảng cách với "Ngày lập" */
+}
+
+
+
+.table-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.meta-item {
+    margin-bottom: 5px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e5e8eb;
+}
+
+.data-table th {
+    background: #f4f5f6;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.data-table td {
+    font-size: 14px;
+}
+
+.data-table tbody tr:first-child td {
+    font-weight: 600;
+}
+
+/* Footer (phân trang cố định) */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 434px; /* 384px (filter-column) + 50px (padding-left của content-container) */
+    width: 1436px; /* 1536px (data-table-container) - 50px (padding-left) - 50px (padding-right) */
+    background: #ffffff;
+    padding: 10px 50px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    border: 1px solid #e5e8eb;
+    background: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background: #007aff;
+    color: #ffffff;
+    border-color: #007aff;
+}
+
+.pagination input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #e5e8eb;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.export-btn {
+    background: #007aff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+}

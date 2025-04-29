@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý cơ hội khách hàng</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/crm.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+       <!-- Menu -->
+        <!-- Menu -->
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item active">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item ">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+            
+        </nav>
+
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Sidebar (Filters) -->
+            <aside class="sidebar">
+                <h2>Cơ hội khách hàng</h2>
+                <div class="filter-table">
+                    <h3>Hiển thị</h3>
+                    <div class="filter-content">
+                        <label><input type="checkbox" value="Mới nhất" class="display-filter" checked /> Mới
+                            nhất</label>
+                        <label><input type="checkbox" value="Tất cả" class="display-filter" /> Tất cả</label>
+                    </div>
+                </div>
+                <div class="filter-table">
+                    <h3>Khoảng thời gian</h3>
+                    <div class="filter-content">
+                        <label>Từ</label>
+                        <input type="date" id="date-from" />
+                        <label>Đến</label>
+                        <input type="date" id="date-to" />
+                    </div>
+                </div>
+                <div class="filter-table">
+                    <h3>Trạng thái</h3>
+                    <div class="filter-content" id="status">
+                        <label><input type="checkbox" value="Mới nhất" /> Mới nhất</label>
+                        <label><input type="checkbox" value="Tiếp cận" /> Tiếp cận</label>
+                        <label><input type="checkbox" value="Tiềm năng" /> Tiềm năng</label>
+                        <label><input type="checkbox" value="Chưa tiếp cận" /> Chưa tiếp cận</label>
+                        <label><input type="checkbox" value="Đã đặt lịch" /> Đã đặt lịch</label>
+                        <label><input type="checkbox" value="Thành công" /> Thành công</label>
+                        <label><input type="checkbox" value="Không thành công" /> Không thành công</label>
+                    </div>
+                </div>
+                <div class="filter-table">
+                    <h3>Nhân viên</h3>
+                    <div class="filter-search">
+                        <input type="text" id="staff-search" placeholder="Tìm kiếm nhân viên" />
+                        
+                    </div>
+                    <div class="filter-content" id="staff">
+                        <label><input type="checkbox" value="Tất cả" /> Tất cả</label>
+                    </div>
+                </div>
+                <div class="filter-table">
+                    <h3>Khu vực</h3>
+                    <div class="filter-search">
+                        <input type="text" id="region-search" placeholder="Tìm kiếm tỉnh thành" />
+                       
+                    </div>
+                    <div class="filter-content" id="region">
+                        <label><input type="checkbox" value="Hà Nội" /> Hà Nội</label>
+                        <label><input type="checkbox" value="Tp Hồ Chí Minh" /> Tp Hồ Chí Minh</label>
+                        <label><input type="checkbox" value="Đà Nẵng" /> Đà Nẵng</label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <div class="content-header">
+                    <div class="search-add">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Tìm kiếm" id="search-input" />
+
+                        </div>
+                        <span>
+                            <button id="excel-import-btn" class="btn-excel btn-action">Nhập Excel</button>
+                            <input type="file" id="excel-input" accept=".xlsx, .xls" style="display: none;" />
+                            <a href="add-opportunity.html" id="action-button" class="btn-add btn-action">+ Thêm khách
+                                hàng</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="customer-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all" /></th>
+                                <th>Mã khách hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Số điện thoại</th>
+                                <th>Lĩnh vực</th>
+                                <th>Nguồn khách hàng</th>
+                                <th>Nhân viên phụ trách</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customer-table-body">
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" data-id="KH001" /></td>
+                                <td>KH001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>0901234567</td>
+                                <td>Công nghệ</td>
+                                <td>Website</td>
+                                <td>Trần Văn B</td>
+                                <td>Thành công</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" data-id="KH002" /></td>
+                                <td>KH002</td>
+                                <td>Trần Thị B</td>
+                                <td>0912345678</td>
+                                <td>Giáo dục</td>
+                                <td>Giới thiệu</td>
+                                <td>Lê Thị C</td>
+                                <td>Tiếp cận</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="row-checkbox" data-id="KH003" /></td>
+                                <td>KH003</td>
+                                <td>Lê Văn C</td>
+                                <td>0923456789</td>
+                                <td>Y tế</td>
+                                <td>Quảng cáo</td>
+                                <td>Nguyễn Thị D</td>
+                                <td>Chưa tiếp cận</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="no-data-message" class="no-data-message" style="display: none;">
+                        <span class="no-data-icon">🔍</span>
+                        <p>Không có kết quả tìm kiếm phù hợp</p>
+                    </div>
+                </div>
+
+                <!-- Delete Confirmation Modal -->
+                <div id="delete-modal" class="modal">
+                    <div class="modal-content">
+                        <h3 class="modal-title">Xóa khách hàng</h3>
+                        <span class="close-modal">×</span>
+                        <p id="delete-message">Bạn chắc chắn muốn xóa khách hàng đã chọn khỏi bảng hợp đồng không?</p>
+                        <div class="modal-actions">
+                            <button id="confirm-delete" class="btn-confirm">Đồng ý</button>
+                            <button id="cancel-delete" class="btn-cancel">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Excel Import Modal -->
+                <div id="excel-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">×</span>
+                        <p>Nhập dữ liệu khách hàng mới từ file dữ liệu</p>
+                        <div id="drop-area" class="drop-area">
+                            <p>+ Kéo thả hoặc tải file lên từ thiết bị<br>Loại file cho phép: .xls, .xlsx. Kích thước
+                                tối đa: 25MB.</p>
+                        </div>
+                        <div id="file-info" class="file-info" style="display: none;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Excel Icon" />
+                            <span id="file-details"></span>
+                            <span class="remove-file">×</span>
+                        </div>
+                        <div class="modal-actions">
+                            <button id="confirm-excel" class="btn-confirm">Đồng ý</button>
+                            <button id="cancel-excel" class="btn-cancel">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (Fixed Footer) -->
+                <div class="pagination fixed-footer">
+                    <span id="result-count">Có 3 kết quả</span>
+                    <div class="pagination-controls">
+                        <button id="prev-page">
+                            << /button>
+                                <button id="current-page" class="active">1</button>
+                                <button id="next-page">></button>
+                    </div>
+                    <span>10/trang</span>
+                    <span id="go-to-page">Đi đến trang 1</span>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Elements
+        const excelImportBtn = document.getElementById('excel-import-btn');
+        const excelModal = document.getElementById('excel-modal');
+        const dropArea = document.getElementById('drop-area');
+        const fileInfo = document.getElementById('file-info');
+        const fileDetails = document.getElementById('file-details');
+        const confirmExcelBtn = document.getElementById('confirm-excel');
+        const cancelExcelBtn = document.getElementById('cancel-excel');
+        const closeExcelModalBtn = excelModal.querySelector('.close-modal');
+        const removeFile = fileInfo.querySelector('.remove-file');
+        const customerTableBody = document.getElementById('customer-table-body');
+        const noDataMessage = document.getElementById('no-data-message');
+        const tableWrapper = document.querySelector('.table-wrapper');
+        const resultCount = document.getElementById('result-count');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const currentPageSpan = document.getElementById('current-page');
+        const goToPageSpan = document.getElementById('go-to-page');
+        const searchInput = document.getElementById('search-input');
+        const statusCheckboxes = document.querySelectorAll('#status input[type="checkbox"]');
+        const displayCheckboxes = document.querySelectorAll('.display-filter');
+        const regionCheckboxes = document.querySelectorAll('#region input[type="checkbox"]');
+        const dateFromInput = document.getElementById('date-from');
+        const dateToInput = document.getElementById('date-to');
+        const staffContainer = document.getElementById('staff');
+        const selectAllCheckbox = document.getElementById('select-all');
+        const actionButton = document.getElementById('action-button');
+        const deleteModal = document.getElementById('delete-modal');
+        const confirmDeleteBtn = document.getElementById('confirm-delete');
+        const cancelDeleteBtn = document.getElementById('cancel-delete');
+        const closeDeleteModalBtn = deleteModal.querySelector('.close-modal');
+        const deleteMessage = document.getElementById('delete-message');
+        const staffSearchInput = document.getElementById('staff-search');
+        const regionSearchInput = document.getElementById('region-search');
+
+        let allRows = [];
+        let filteredRows = [];
+        const itemsPerPage = 10;
+        let currentPage = 1;
+        let staffList = new Set();
+        let selectedFile = null;
+
+        // Load initial data into allRows and add from localStorage
+        function loadInitialData() {
+            // Initialize staffList with 'Tất cả'
+            staffList.add('Tất cả');
+
+            // Load static rows from HTML
+            const rows = customerTableBody.querySelectorAll('tr');
+            rows.forEach(row => {
+                allRows.push(row);
+                const staff = row.cells[6].textContent.trim();
+                if (staff) staffList.add(staff); // Only add non-empty staff
+            });
+
+            // Load customers from localStorage
+            const storedCustomers = JSON.parse(localStorage.getItem('customers')) || [];
+            storedCustomers.forEach((customer, index) => {
+                // Generate unique ID if not present
+                const customerId = customer.customerCode || `KH${String(index + 4).padStart(3, '0')}`; // Start from KH004
+                const tableRow = document.createElement('tr');
+                tableRow.innerHTML = `
+                    <td><input type="checkbox" class="row-checkbox" data-id="${customerId}" /></td>
+                    <td>${customerId}</td>
+                    <td>${customer.customerName || ''}</td>
+                    <td>${customer.phoneNumber || ''}</td>
+                    <td>${customer.field || ''}</td>
+                    <td>${customer.customerSource || ''}</td>
+                    <td>${customer.assignedStaff || ''}</td>
+                    <td>${formatStatus(customer.status) || ''}</td>
+                `;
+                customerTableBody.appendChild(tableRow);
+                allRows.push(tableRow);
+                const staff = customer.assignedStaff || '';
+                if (staff) staffList.add(staff); // Only add non-empty staff
+            });
+
+            filteredRows = [...allRows];
+            populateStaffFilter();
+            updateTableVisibility();
+            updatePagination();
+            attachCheckboxListeners();
+            updateActionButton();
+        }
+
+        // Format status from value to display text
+        function formatStatus(statusValue) {
+            const statusMap = {
+                'moi-nhat': 'Mới nhất',
+                'tiep-can': 'Tiếp cận',
+                'tiem-nang': 'Tiềm năng',
+                'chua-tiep-can': 'Chưa tiếp cận',
+                'da-dat-lich': 'Đã đặt lịch',
+                'thanh-cong': 'Thành công',
+                'khong-thanh-cong': 'Không thành công'
+            };
+            return statusMap[statusValue] || statusValue;
+        }
+
+        // Populate staff filter dynamically from table data
+        function populateStaffFilter() {
+            staffContainer.innerHTML = ''; // Clear existing content
+            staffList.forEach(staff => {
+                const label = document.createElement('label');
+                label.innerHTML = `<input type="checkbox" value="${staff}" /> ${staff}`;
+                staffContainer.appendChild(label);
+            });
+
+            const staffCheckboxes = document.querySelectorAll('#staff input[type="checkbox"]');
+            staffCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', filterCustomers);
+            });
+        }
+
+        // Excel Import Modal Logic
+        excelImportBtn.addEventListener('click', () => {
+            excelModal.style.display = 'block';
+        });
+
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.classList.remove('dragover');
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        dropArea.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx, .xls';
+            input.onchange = (e) => {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            };
+            input.click();
+        });
+
+        function handleFile(file) {
+            if (file && (file.type === 'application/vnd.ms-excel' || file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')) {
+                selectedFile = file;
+                dropArea.style.display = 'none';
+                fileInfo.style.display = 'flex';
+                fileDetails.textContent = `${file.name} (${(file.size / (1024 * 1024)).toFixed(1)}MB)`;
+            } else {
+                alert('Vui lòng chọn file Excel (.xls hoặc .xlsx)');
+            }
+        }
+
+        removeFile.addEventListener('click', () => {
+            selectedFile = null;
+            dropArea.style.display = 'block';
+            fileInfo.style.display = 'none';
+        });
+
+        confirmExcelBtn.addEventListener('click', () => {
+            if (selectedFile) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+
+                    jsonData.forEach(row => {
+                        const tableRow = document.createElement('tr');
+                        const staff = row['Nhân viên phụ trách'] || '';
+                        if (staff) staffList.add(staff); // Add new staff to the set
+                        tableRow.innerHTML = `
+                            <td><input type="checkbox" class="row-checkbox" data-id="${row['Mã khách hàng'] || ''}" /></td>
+                            <td>${row['Mã khách hàng'] || ''}</td>
+                            <td>${row['Tên khách hàng'] || ''}</td>
+                            <td>${row['Số điện thoại'] || ''}</td>
+                            <td>${row['Lĩnh vực'] || ''}</td>
+                            <td>${row['Nguồn khách hàng'] || ''}</td>
+                            <td>${staff}</td>
+                            <td>${row['Trạng thái'] || ''}</td>
+                        `;
+                        customerTableBody.appendChild(tableRow);
+                        allRows.push(tableRow);
+                    });
+
+                    populateStaffFilter();
+                    filterCustomers();
+                    closeExcelModal();
+                };
+                reader.readAsArrayBuffer(selectedFile);
+            }
+        });
+
+        cancelExcelBtn.addEventListener('click', closeExcelModal);
+        closeExcelModalBtn.addEventListener('click', closeExcelModal);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === excelModal) {
+                closeExcelModal();
+            }
+        });
+
+        function closeExcelModal() {
+            excelModal.style.display = 'none';
+            selectedFile = null;
+            dropArea.style.display = 'block';
+            fileInfo.style.display = 'none';
+        }
+
+        function updateActionButton() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+            console.log('Số checkbox được chọn:', checkedBoxes.length);
+            if (checkedBoxes.length > 0) {
+                actionButton.textContent = 'Xóa';
+                actionButton.classList.remove('btn-add');
+                actionButton.classList.add('btn-delete');
+                actionButton.href = '#';
+                actionButton.onclick = showDeleteModal;
+            } else {
+                actionButton.textContent = '+ Thêm khách hàng';
+                actionButton.classList.remove('btn-delete');
+                actionButton.classList.add('btn-add');
+                actionButton.href = 'add-opportunity.html';
+                actionButton.onclick = null;
+            }
+        }
+
+        function showDeleteModal() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+            if (checkedBoxes.length > 0) {
+                deleteMessage.textContent = 'Bạn chắc chắn muốn xóa khách hàng đã chọn khỏi bảng hợp đồng không?';
+                deleteModal.style.display = 'block';
+            }
+        }
+
+        function closeDeleteModal() {
+            deleteModal.style.display = 'none';
+        }
+
+        function deleteSelectedRows() {
+            const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+            const customerIdsToDelete = Array.from(checkedBoxes).map(box => box.getAttribute('data-id'));
+
+            // Update localStorage
+            let storedCustomers = JSON.parse(localStorage.getItem('customers')) || [];
+            storedCustomers = storedCustomers.filter(customer => {
+                const customerId = customer.customerCode || '';
+                return !customerIdsToDelete.includes(customerId);
+            });
+            localStorage.setItem('customers', JSON.stringify(storedCustomers));
+
+            // Remove rows from allRows and update staffList
+            allRows = allRows.filter(row => {
+                const rowId = row.querySelector('.row-checkbox').getAttribute('data-id');
+                return !customerIdsToDelete.includes(rowId);
+            });
+
+            // Rebuild staffList after deletion
+            staffList = new Set(['Tất cả']);
+            allRows.forEach(row => {
+                const staff = row.cells[6].textContent.trim();
+                if (staff) staffList.add(staff);
+            });
+
+            // Clear the table body and re-render
+            customerTableBody.innerHTML = '';
+            filteredRows = [...allRows];
+            populateStaffFilter();
+            renderPaginatedTable();
+            closeDeleteModal();
+            updateActionButton();
+        }
+
+        function filterCustomers() {
+            const selectedStatuses = Array.from(statusCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const selectedDisplays = Array.from(displayCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const selectedRegions = Array.from(regionCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const selectedStaff = Array.from(document.querySelectorAll('#staff input[type="checkbox"]'))
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const dateFrom = dateFromInput.value ? new Date(dateFromInput.value) : new Date(0);
+            const dateTo = dateToInput.value ? new Date(dateToInput.value) : new Date('9999-12-31');
+            const searchQuery = searchInput.value.toLowerCase();
+            const staffSearchQuery = staffSearchInput.value.toLowerCase();
+            const regionSearchQuery = regionSearchInput.value.toLowerCase();
+
+            // Filter staff checkboxes based on search
+            const staffCheckboxes = document.querySelectorAll('#staff input[type="checkbox"]');
+            staffCheckboxes.forEach(checkbox => {
+                const label = checkbox.parentElement;
+                const staffName = label.textContent.trim().toLowerCase();
+                label.style.display = staffSearchQuery === '' || staffName.includes(staffSearchQuery) ? 'block' : 'none';
+            });
+
+            // Filter region checkboxes based on search
+            const regionCheckboxes = document.querySelectorAll('#region input[type="checkbox"]');
+            regionCheckboxes.forEach(checkbox => {
+                const label = checkbox.parentElement;
+                const regionName = label.textContent.trim().toLowerCase();
+                label.style.display = regionSearchQuery === '' || regionName.includes(regionSearchQuery) ? 'block' : 'none';
+            });
+
+            filteredRows = allRows.filter(row => {
+                const status = row.cells[7].textContent.trim();
+                const staff = row.cells[6].textContent.trim();
+                const region = row.cells[6].textContent.trim();
+                const customerId = row.cells[1].textContent.toLowerCase();
+                const customerName = row.cells[2].textContent.toLowerCase();
+
+                const statusMatch = selectedStatuses.length === 0 || selectedStatuses.includes(status);
+                const staffMatch = selectedStaff.length === 0 || selectedStaff.includes('Tất cả') || selectedStaff.includes(staff);
+                const regionMatch = selectedRegions.length === 0 || selectedRegions.includes(region);
+                const searchMatch = customerId.includes(searchQuery) || customerName.includes(searchQuery);
+                const displayMatch = selectedDisplays.length === 0 || selectedDisplays.includes('Tất cả') || (selectedDisplays.includes('Mới nhất') && status === 'Mới nhất');
+
+                return statusMatch && staffMatch && regionMatch && searchMatch && displayMatch;
+            });
+
+            currentPage = 1;
+            renderPaginatedTable();
+        }
+
+        function renderPaginatedTable() {
+            customerTableBody.innerHTML = '';
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedRows = filteredRows.slice(startIndex, endIndex);
+
+            paginatedRows.forEach(row => {
+                customerTableBody.appendChild(row);
+            });
+
+            attachCheckboxListeners();
+            updateSelectAll();
+            updateTableVisibility();
+            updatePagination();
+            updateActionButton();
+        }
+
+        function attachCheckboxListeners() {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            console.log('Số checkbox hàng được tìm thấy:', checkboxes.length);
+            checkboxes.forEach(checkbox => {
+                checkbox.removeEventListener('change', handleCheckboxChange);
+                checkbox.addEventListener('change', handleCheckboxChange);
+            });
+        }
+
+        function handleCheckboxChange(event) {
+            const checkbox = event.target;
+            console.log('Checkbox thay đổi:', checkbox.getAttribute('data-id'), 'Trạng thái:', checkbox.checked);
+            updateSelectAll();
+            updateActionButton();
+        }
+
+        function updateSelectAll() {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            const checkedCount = document.querySelectorAll('.row-checkbox:checked').length;
+            selectAllCheckbox.checked = checkedCount === checkboxes.length && checkboxes.length > 0;
+        }
+
+        function updateTableVisibility() {
+            const rowCount = filteredRows.length;
+            if (rowCount === 0) {
+                tableWrapper.querySelector('table').style.display = 'none';
+                noDataMessage.style.display = 'flex';
+            } else {
+                tableWrapper.querySelector('table').style.display = 'table';
+                noDataMessage.style.display = 'none';
+            }
+            resultCount.textContent = `Có ${rowCount} kết quả`;
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+            currentPageSpan.textContent = currentPage;
+            goToPageSpan.textContent = `Đi đến trang ${currentPage}`;
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+            prevPageBtn.classList.toggle('active', currentPage !== 1);
+            nextPageBtn.classList.toggle('active', currentPage !== totalPages && totalPages !== 0);
+        }
+
+        // Event Listeners
+        selectAllCheckbox.addEventListener('change', () => {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            console.log('Checkbox select-all thay đổi:', selectAllCheckbox.checked);
+            checkboxes.forEach(checkbox => {
+                if (checkbox.closest('tr').style.display !== 'none') {
+                    checkbox.checked = selectAllCheckbox.checked;
+                }
+            });
+            updateActionButton();
+        });
+
+        confirmDeleteBtn.addEventListener('click', deleteSelectedRows);
+        cancelDeleteBtn.addEventListener('click', closeDeleteModal);
+        closeDeleteModalBtn.addEventListener('click', closeDeleteModal);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === deleteModal) {
+                closeDeleteModal();
+            }
+        });
+
+        statusCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterCustomers);
+        });
+
+        displayCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterCustomers);
+        });
+
+        regionCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterCustomers);
+        });
+
+        dateFromInput.addEventListener('change', filterCustomers);
+        dateToInput.addEventListener('change', filterCustomers);
+        searchInput.addEventListener('input', filterCustomers);
+        staffSearchInput.addEventListener('input', filterCustomers);
+        regionSearchInput.addEventListener('input', filterCustomers);
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPaginatedTable();
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPaginatedTable();
+            }
+        });
+
+        // Initial render
+        loadInitialData();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'933e23d2d8c9b062',t:'MTc0NTI1MTcwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/baocao.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <div class="menu-link report-container" id="report-menu">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+                <!-- Table for Báo cáo -->
+                <table class="report-table" id="report-table">
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocao.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/ZXvRTjMAJS.png"
+                                    alt="Tổng hợp" class="table-icon" />
+                                <span>Tổng hợp</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaonhanvien.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                                    alt="Nhân viên" class="table-icon" />
+                                <span>Nhân viên</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaohopdong.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                                    alt="Hợp đồng" class="table-icon" />
+                                <span>Hợp đồng</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaokhachhang.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                                    alt="Khách hàng" class="table-icon" />
+                                <span>Khách hàng</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+            
+        </nav>
+
+        <!-- Nội dung chính -->
+        <div class="content-container">
+            <!-- Bộ lọc bên trái -->
+            <div class="filter-column">
+                <!-- Bảng Hiển thị -->
+                <div class="filter-panel display-filter">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Hiển thị</h3>
+                        <span class="toggle-icon"><img src="../Public/img/thanhsolen.png" alt=""></span>
+                    </div>
+                    <div class="filter-content">
+                        <div class="radio-group">
+                            <label><input type="radio" name="display" value="tong-quan" /> Tổng quan</label>
+                            <label><input type="radio" name="display" value="chi-tiet" checked /> Chi tiết</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bảng Khoảng thời gian -->
+                <div class="filter-panel time-filter">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Khoảng thời gian</h3>
+                        <span class="toggle-icon"><img src="../Public/img/thanhsolen.png" alt=""></span>
+                    </div>
+                    <div class="filter-content">
+                        <div class="date-group">
+                            <label>Từ</label>
+                            <input type="date" value="2022-01-01" />
+                        </div>
+                        <div class="date-group">
+                            <label>Đến</label>
+                            <input type="date" value="2022-01-01" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bảng Nhân viên -->
+                <div class="filter-panel employee-filter">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Nhân viên</h3>
+                        <span class="toggle-icon"><img src="../Public/img/thanhsolen.png" alt=""></span>
+                    </div>
+                    <div class="filter-content">
+                        <input type="text" placeholder="Tìm kiếm nhân viên" class="employee-search" />
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked /> Vũ Thị Kiều Cúc</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bảng dữ liệu chính -->
+            <div class="data-table-container">
+                <div class="table-title-row">
+                    <span class="table-date">Ngày lập: 14/11/2025 09:47</span>
+                    <h2 class="table-title">BÁO CÁO TỔNG HỢP CUỐI NGÀY</h2>
+                </div>
+                <div class="table-meta">
+                    <div class="meta-item">Ngày báo cáo: 1/04/2025 - 30/4/2025</div>
+                    
+                </div>
+                <table class="data-table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã nhân viên</th>
+                            <th>Tên nhân viên</th>
+                            <th>Tổng dữ liệu khách hàng</th>
+                            <th>Hợp đồng</th>
+                            <th>Dự án hoàn thành</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TỔNG</td>
+                            <td></td>
+                            <td></td>
+                            <td>45</td>
+                            <td>90</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>NV02</td>
+                            <td>Vũ Thị Kiều Cúc</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer (phân trang cố định) -->
+        <footer class="footer">
+            <div class="pagination">
+                <span>Có 10 trang</span>
+                <button>
+                    << /button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>></button>
+                        <span>10/ trang</span>
+                        <label>Đi đến trang</label>
+                        <input type="number" value="1" min="1" max="10" />
+                        <button class="export-btn">Xuất file</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript để xử lý hover, dropdown và thay đổi bảng -->
+    <script>
+        // Xử lý hover cho menu Báo cáo
+        const reportContainer = document.getElementById('report-menu');
+        const reportTable = document.getElementById('report-table');
+        let hideTimeout;
+
+        reportContainer.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            reportTable.style.display = 'block';
+        });
+
+        reportContainer.addEventListener('mouseleave', (e) => {
+            hideTimeout = setTimeout(() => {
+                if (!reportTable.contains(e.relatedTarget)) {
+                    reportTable.style.display = 'none';
+                }
+            }, 200);
+        });
+
+        reportTable.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            reportTable.style.display = 'block';
+        });
+
+        reportTable.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                reportTable.style.display = 'none';
+            }, 200);
+        });
+
+        // Xử lý dropdown cho các bảng bộ lọc
+        document.querySelectorAll('.filter-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const toggleIcon = header.querySelector('.toggle-icon');
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    toggleIcon.textContent = '▼';
+                } else {
+                    content.style.display = 'none';
+                    toggleIcon.textContent = '▲';
+                }
+            });
+        });
+
+        // Xử lý thay đổi bảng dựa trên lựa chọn "Tổng quan" hoặc "Chi tiết"
+        const dataTable = document.getElementById('data-table');
+        const radios = document.querySelectorAll('input[name="display"]');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const value = e.target.value;
+
+                if (value === 'tong-quan') {
+                    // Bảng Tổng quan (6 cột)
+                    dataTable.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã nhân viên</th>
+                                <th>Tên nhân viên</th>
+                                <th>Tổng dữ liệu khách hàng</th>
+                                <th>Hợp đồng</th>
+                                <th>Dự án hoàn thành</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TỔNG</td>
+                                <td></td>
+                                <td></td>
+                                <td>45</td>
+                                <td>90</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    `;
+                } else if (value === 'chi-tiet') {
+                    // Bảng Chi tiết (10 cột)
+                    dataTable.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã nhân viên</th>
+                                <th>Tên nhân viên</th>
+                                <th>Tổng dữ liệu khách hàng</th>
+                                <th>Thảnh công</th>
+                                <th>Tiến độ</th>
+                                <th>Đã đạt được</th>
+                                <th>Hợp đồng</th>
+                                <th>Dự án bàn giao</th>
+                                <th>Dự án hoàn thành</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TỔNG</td>
+                                <td></td>
+                                <td></td>
+                                <td>900</td>
+                                <td>45</td>
+                                <td>90</td>
+                                <td>45</td>
+                                <td>15</td>
+                                <td>10</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>DL000012</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>NV02</td>
+                                <td>Vũ Thị Kiều Cúc</td>
+                                <td>100</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>DL000012</td>
+                                <td>Đại Lý Thiên Ân</td>
+                                <td>Cửa Gỗ/Hà Nội</td>
+                                <td>2,450,000</td>
+                                <td>1,100,000</td>
+                                <td>2,550,000</td>
+                                <td>6,100,000</td>
+                                <td>2,500,000</td>
+                                <td>3,600,000</td>
+                            </tr>
+                        </tbody>
+                    `;
+                }
+            });
+        });
+    </script>

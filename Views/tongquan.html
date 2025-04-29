@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/tongquan.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item ">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+            
+        </nav>
+            <!-- Thống kê kết quả theo ngày -->
+            <div class="daily-stats">
+                <h3>Thống kê kết quả theo ngày</h3>
+                <div class="stats-items">
+                    <div class="stat-item">
+                        <img src="../Public/img/dulieukhachhang.png" alt="Order Icon" class="custom-icon">
+                        <div class="text-content">
+                            <span>Đơn lập khách hàng</span>
+                            <strong>100</strong>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <img src="../Public/img/hopdongmoi.png" alt="Contract Icon" class="custom-icon">
+                        <div class="text-content">
+                            <span>Hợp đồng mới</span>
+                            <strong>10</strong>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <img src="../Public/img/anhdep2.png   " alt="Revenue Icon" class="custom-icon">
+                        <div class="text-content">
+                            <span>Doanh thu tháng</span>
+                            <strong>5</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Main Content -->
+            <main>
+                <section class="dashboard-overview">
+                    <div class="card chart-card">
+                        <h3>Dữ liệu khách hàng mới</h3>
+                        <div class="chart-container">
+                            <canvas id="newCustomersChart"></canvas>
+                        </div>
+                        <button class="filter-button">Theo tuần <span class="dropdown-icon">▼</span></button>
+                    </div>
+                    <div class="card stats-card">
+                        <h3>Hoạt động gần đây</h3>
+                        <ul class="activity-list" id="activityList">
+                            <!-- Dữ liệu sẽ được thêm từ JavaScript -->
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="dashboard-details">
+                    <div class="card overview-card">
+                        <h3>Tổng quan gần đây</h3>
+                        <table class="overview-table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Mã HD</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày cập nhật</th>
+                                </tr>
+                            </thead>
+                            <tbody id="overviewTableBody">
+                                <!-- Dữ liệu sẽ được thêm từ JavaScript -->
+                            </tbody>
+                        </table>
+                        <button class="view-more">Xem thêm</button>
+                    </div>
+                    <div class="card table-card">
+                        <h3>Thống kê theo chiến dịch</h3>
+                        <div class="bar-chart" id="barChart">
+                            <!-- Dữ liệu sẽ được thêm từ JavaScript -->
+                        </div>
+                    </div>
+                    <div class="card pie-chart-card">
+                        <h3>Thống kê theo nguồn tiếp cận</h3>
+                        <div class="pie-chart-container">
+                            <canvas id="sourcePieChart"></canvas>
+                        </div>
+                        <ul class="pie-legend" id="pieLegend">
+                            <!-- Dữ liệu sẽ được thêm từ JavaScript -->
+                        </ul>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Liên kết đến tệp dữ liệu -->
+        <script src="../Public/js/tongquan.js"></script>
+        <script>
+            // Biểu đồ Dữ liệu khách hàng mới
+            const ctx = document.getElementById('newCustomersChart').getContext('2d');
+            const newCustomersChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [], // Để trống
+                    datasets: [{
+                        label: 'Dữ liệu khách hàng mới',
+                        data: [], // Để trống
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#007bff',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                stepSize: 20,
+                                callback: function (value) {
+                                    return value + 'm';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: function (tooltipItems) {
+                                    return tooltipItems[0].label + '/2022';
+                                },
+                                label: function (context) {
+                                    return context.parsed.y.toLocaleString() + '';
+                                }
+                            }
+                        },
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Biểu đồ tròn Thống kê theo nguồn tiếp cận
+            const pieCtx = document.getElementById('sourcePieChart').getContext('2d');
+            const sourcePieChart = new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: [], // Để trống
+                    datasets: [{
+                        data: [], // Để trống
+                        backgroundColor: ['#ff6f61', '#6b7280', '#facc15', '#10b981'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Cập nhật dữ liệu từ dashboard-data.js
+            if (typeof dashboardData !== 'undefined') {
+                // Cập nhật biểu đồ Dữ liệu khách hàng mới
+                if (dashboardData.newCustomers) {
+                    newCustomersChart.data.labels = dashboardData.newCustomers.labels;
+                    newCustomersChart.data.datasets[0].data = dashboardData.newCustomers.data;
+                    newCustomersChart.update();
+                }
+
+                // Cập nhật Hoạt động gần đây
+                if (dashboardData.activities) {
+                    const activityList = document.getElementById('activityList');
+                    activityList.innerHTML = dashboardData.activities.map(activity => `
+                        <li>
+                            <span class="activity-date">${activity.date}</span>
+                            <span class="activity-description">${activity.description}</span>
+                        </li>
+                    `).join('');
+                }
+
+                // Cập nhật Tổng quan gần đây
+                if (dashboardData.overview) {
+                    const overviewTableBody = document.getElementById('overviewTableBody');
+                    overviewTableBody.innerHTML = dashboardData.overview.map((item, index) => `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${item.code}</td>
+                            <td>${item.status}</td>
+                            <td>${item.date}</td>
+                        </tr>
+                    `).join('');
+                }
+
+                // Cập nhật Thống kê theo chiến dịch
+                if (dashboardData.campaignStats) {
+                    const barChart = document.getElementById('barChart');
+                    barChart.innerHTML = dashboardData.campaignStats.map(stat => `
+                        <div class="bar-item">
+                            <img src="${stat.icon}" alt="Biểu tượng ${stat.name}">
+                            <div class="bar">
+                                <div class="bar-fill ${stat.class}" style="width: ${stat.percentage}%;"></div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+                // Cập nhật Thống kê theo nguồn tiếp cận
+                if (dashboardData.sourceStats) {
+                    sourcePieChart.data.labels = dashboardData.sourceStats.map(stat => stat.label);
+                    sourcePieChart.data.datasets[0].data = dashboardData.sourceStats.map(stat => stat.value);
+                    sourcePieChart.update();
+
+                    const pieLegend = document.getElementById('pieLegend');
+                    pieLegend.innerHTML = dashboardData.sourceStats.map((stat, index) => `
+                        <li>
+                            <span class="legend-color" style="background-color: ${['#ff6f61', '#6b7280', '#facc15', '#10b981'][index]};"></span>
+                            ${stat.label}: ${stat.value}
+                        </li>
+                    `).join('');
+                }
+            }
+        </script>
+</body>
+
+</html>

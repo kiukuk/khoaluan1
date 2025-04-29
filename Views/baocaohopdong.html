@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo Hợp đồng Khách hàng</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/baocao.css" />
+    <link rel="stylesheet" href="../Public/css/baocaohopdong.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <div class="menu-link report-container" id="report-menu">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+                <!-- Table for Báo cáo -->
+                <table class="report-table" id="report-table">
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocao.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/ZXvRTjMAJS.png"
+                                    alt="Tổng hợp" class="table-icon" />
+                                <span>Tổng hợp</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaonhanvien.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                                    alt="Nhân viên" class="table-icon" />
+                                <span>Nhân viên</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaohopdong.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                                    alt="Hợp đồng" class="table-icon" />
+                                <span>Hợp đồng</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">
+                            <a href="baocaokhachhang.html" class="table-link">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                                    alt="Khách hàng" class="table-icon" />
+                                <span>Khách hàng</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+
+        </nav>
+
+        <!-- Tiêu đề và nút "Xuất file" -->
+        <div class="content-header">
+            <h2 class="content-title">Báo cáo hợp đồng khách hàng</h2>
+            <button class="export-btn">
+                <span class="export-icon">⬇</span> Xuất file
+            </button>
+        </div>
+
+        <!-- Nội dung chính -->
+        <div class="content-container">
+            <!-- Bộ lọc và bảng -->
+            <div class="filter-and-table">
+                <!-- Bộ lọc bên trái -->
+                <div class="filter-column">
+                    <!-- Khoảng thời gian -->
+                    <div class="filter-panel">
+                        <h3 class="filter-title">Khoảng thời gian</h3>
+                        <div class="filter-content">
+                            <div class="date-group">
+                                <label>Từ</label>
+                                <input type="date" id="start-date" value="" />
+                                <label>Đến</label>
+                                <input type="date" id="end-date" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Giá trị hợp đồng -->
+                    <div class="filter-panel">
+                        <h3 class="filter-title">Giá trị hợp đồng</h3>
+                        <div class="filter-content">
+                            <div class="value-group">
+                                <label>Từ</label>
+                                <input type="number" id="value-from" />
+                                <label>Đến</label>
+                                <input type="number" id="value-to" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nhân viên -->
+                    <div class="filter-panel">
+                        <h3 class="filter-title">Nhân viên</h3>
+                        <div class="filter-content">
+                            <select class="search-dropdown">
+                                <option>Tìm kiếm nhân viên</option>
+                            </select>
+                            <div class="checkbox-group" id="employee-checkboxes">
+                                <label><input type="checkbox" value="Nguyễn Thị A" /> Nguyễn Thị A</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Khu vực -->
+                    <div class="filter-panel">
+                        <h3 class="filter-title">Khu vực</h3>
+                        <div class="filter-content">
+                            <select class="search-dropdown">
+                                <option>Tìm kiếm khu vực</option>
+                            </select>
+                            <div class="checkbox-group" id="area-checkboxes">
+                                <label><input type="checkbox" value="Hà Nội" /> Hà Nội</label>
+                                <label><input type="checkbox" value="TP. Hồ Chí Minh" /> TP. Hồ Chí Minh</label>
+                                <label><input type="checkbox" value="Đà Nẵng" /> Đà Nẵng</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trạng thái -->
+                    <div class="filter-panel">
+                        <h3 class="filter-title">Trạng thái</h3>
+                        <div class="filter-content">
+                            <select class="search-dropdown">
+                                <option>Tìm kiếm trạng thái</option>
+                            </select>
+                            <div class="checkbox-group" id="status-checkboxes">
+                                <label><input type="checkbox" value="Chưa gửi" /> Chưa gửi</label>
+                                <label><input type="checkbox" value="Chưa thanh toán" /> Chưa thanh toán</label>
+                                <label><input type="checkbox" value="Đã thanh toán một phần" /> Đã thanh toán một
+                                    phần</label>
+                                <label><input type="checkbox" value="Quá hạn" /> Quá hạn</label>
+                                <label><input type="checkbox" value="Đã thanh toán" /> Đã thanh toán</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bảng bên phải -->
+                <div class="data-table-container">
+                    <!-- Bảng: Danh sách hợp đồng -->
+                    <div class="table-section">
+                        <div class="table-title-row">
+                            <span class="table-date">Ngày lập: 01/01/2025 09:47</span>
+                            <div class="title-and-report-date">
+                                <h2 class="table-title">BÁO CÁO HỢP ĐỒNG KHÁCH HÀNG</h2>
+                                <span class="report-date">Ngày báo cáo: 01/01/2025 - 01/01/2025</span>
+                            </div>
+                        </div>
+                        <table class="data-table" id="data-table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Mã hợp đồng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Khu vực</th>
+                                    <th>Ngày ký HD</th>
+                                    <th>Nhân viên phụ trách</th>
+                                    <th>Giá trị hợp đồng</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data-table-body">
+                                <tr>
+                                    <td>1</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>Hà Nội</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Quá hạn</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán một phần</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>HD0002324</td>
+                                    <td>Vũ Thị Kiều Cúc</td>
+                                    <td>0838240956</td>
+                                    <td>TP. Hồ Chí Minh</td>
+                                    <td>2025-01-01</td>
+                                    <td>Nguyễn Thị A</td>
+                                    <td>45000000</td>
+                                    <td>Đã thanh toán</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="pagination">
+                <span>Có 30 kết quả</span>
+                <button>
+                    << /button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>></button>
+                        <span>10/ trang</span>
+                        <label>Đi đến trang</label>
+                        <input type="number" value="1" min="1" max="3" />
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript để xử lý hover và lọc dữ liệu -->
+    <script>
+        // Xử lý hover cho menu
+        const reportContainer = document.getElementById('report-menu');
+        const reportTable = document.getElementById('report-table');
+        let hideTimeout;
+
+        reportContainer.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            reportTable.style.display = 'block';
+        });
+
+        reportContainer.addEventListener('mouseleave', (e) => {
+            hideTimeout = setTimeout(() => {
+                if (!reportTable.contains(e.relatedTarget)) {
+                    reportTable.style.display = 'none';
+                }
+            }, 200);
+        });
+
+        reportTable.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            reportTable.style.display = 'block';
+        });
+
+        reportTable.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                reportTable.style.display = 'none';
+            }, 200);
+        });
+
+        // Xử lý lọc dữ liệu
+        const tableBody = document.getElementById('data-table-body');
+        const rows = Array.from(tableBody.getElementsByTagName('tr'));
+        const originalRows = rows.map(row => row.cloneNode(true)); // Lưu bản sao của dữ liệu gốc
+
+        function filterTable() {
+            // Lấy giá trị từ các bộ lọc
+            const startDateInput = document.getElementById('start-date').value;
+            const endDateInput = document.getElementById('end-date').value;
+            const startDate = startDateInput ? new Date(startDateInput) : null;
+            const endDate = endDateInput ? new Date(endDateInput) : null;
+            const valueFrom = parseFloat(document.getElementById('value-from').value) || -Infinity;
+            const valueTo = parseFloat(document.getElementById('value-to').value) || Infinity;
+
+            // Lấy danh sách nhân viên được chọn
+            const employeeCheckboxes = document.querySelectorAll('#employee-checkboxes input:checked');
+            const selectedEmployees = Array.from(employeeCheckboxes).map(cb => cb.value);
+
+            // Lấy danh sách khu vực được chọn
+            const areaCheckboxes = document.querySelectorAll('#area-checkboxes input:checked');
+            const selectedAreas = Array.from(areaCheckboxes).map(cb => cb.value);
+
+            // Lấy danh sách trạng thái được chọn
+            const statusCheckboxes = document.querySelectorAll('#status-checkboxes input:checked');
+            const selectedStatuses = Array.from(statusCheckboxes).map(cb => cb.value);
+
+            // Lọc dữ liệu
+            const filteredRows = originalRows.filter(row => {
+                const cells = row.getElementsByTagName('td');
+                const contractDate = new Date(cells[5].textContent); // Ngày ký HD
+                const contractValue = parseFloat(cells[7].textContent.replace(/,/g, '')); // Giá trị hợp đồng
+                const employee = cells[6].textContent; // Nhân viên phụ trách
+                const area = cells[4].textContent; // Khu vực
+                const status = cells[8].textContent; // Trạng thái
+
+                // Kiểm tra khoảng thời gian (chỉ áp dụng nếu cả startDate và endDate đều được chọn)
+                const dateInRange = (startDateInput && endDateInput)
+                    ? (contractDate >= startDate && contractDate <= endDate)
+                    : true;
+
+                // Kiểm tra giá trị hợp đồng
+                const valueInRange = contractValue >= valueFrom && contractValue <= valueTo;
+
+                // Kiểm tra nhân viên
+                const employeeMatch = selectedEmployees.length === 0 || selectedEmployees.includes(employee);
+
+                // Kiểm tra khu vực
+                const areaMatch = selectedAreas.length === 0 || selectedAreas.includes(area);
+
+                // Kiểm tra trạng thái
+                const statusMatch = selectedStatuses.length === 0 || selectedStatuses.includes(status);
+
+                return dateInRange && valueInRange && employeeMatch && areaMatch && statusMatch;
+            });
+
+            // Cập nhật bảng
+            tableBody.innerHTML = '';
+            filteredRows.forEach((row, index) => {
+                row.cells[0].textContent = index + 1; // Cập nhật lại STT
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Gắn sự kiện cho các bộ lọc
+        document.getElementById('start-date').addEventListener('change', filterTable);
+        document.getElementById('end-date').addEventListener('change', filterTable);
+        document.getElementById('value-from').addEventListener('input', filterTable);
+        document.getElementById('value-to').addEventListener('input', filterTable);
+        document.querySelectorAll('#employee-checkboxes input').forEach(cb => cb.addEventListener('change', filterTable));
+        document.querySelectorAll('#area-checkboxes input').forEach(cb => cb.addEventListener('change', filterTable));
+        document.querySelectorAll('#status-checkboxes input').forEach(cb => cb.addEventListener('change', filterTable));
+
+        // Gọi lần đầu để áp dụng bộ lọc mặc định
+        filterTable();
+    </script>
+</body>
+
+</html>

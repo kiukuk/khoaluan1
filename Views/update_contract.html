@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chỉnh sửa hợp đồng</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/hopdong.css" />
+    <link rel="stylesheet" href="../Public/css/add-contract.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span id="userFullName">Đang tải...</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="#" onclick="navigateTo('tong quan/tongquan.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="#" onclick="navigateTo('taikhoan/taikhoan.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="#" onclick="navigateTo('hopdong/hopdong.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="#" onclick="navigateTo('khachhang/khachhang.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="#" onclick="navigateTo('baocao/baocao.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="#" onclick="navigateTo('dulieu/dulieu.html')" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+        </nav>
+
+        <form id="updateContractForm">
+            <!-- Add Contract Content -->
+            <div class="add-contract-container">
+                <div class="header-row">
+                    <span style="font-size: 16px; color: #141414;">
+                        <a href="hopdong.html" style="color: #007aff; text-decoration: none;">Hợp đồng |</a> Chỉnh sửa
+                        hợp
+                        đồng
+                    </span>
+                    <div class="action-buttons">
+                        <button id="save-button" type="button" class="btn-edit">Lưu</button>
+                        <div style="margin-right: 10px;"></div>
+                        <button id="cancel-button" class="btn-cancel">Hủy bỏ</button>
+                    </div>
+                </div>
+
+                <div class="scrollable-content">
+                    <div class="add-contract-content">
+                        <!-- Thông tin hợp đồng -->
+                        <div class="info-section contract-info">
+                            <h3>Thông tin hợp đồng</h3>
+
+
+                            <div class="info-columns">
+                                <!-- Cột 1 -->
+                                <div class="info-column">
+                                    <div class="form-group">
+                                        <label class="required">Mã khách hàng</label>
+                                        <input type="text" id="customer-id" disabled />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Mã Hợp đồng</label>
+                                        <input type="text" id="contract-id" disabled />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Từ ngày</label>
+                                        <input type="date" id="start-date" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Giá trị hợp đồng</label>
+                                        <input type="text" id="contract-value" placeholder="0"
+                                            oninput="updateSummary()" />
+                                    </div>
+                                </div>
+                                <!-- Cột 2 -->
+                                <div class="info-column">
+                                    <div class="form-group">
+                                        <label class="required">Tên khách hàng</label>
+                                        <input type="text" id="customer-name" placeholder="Nhập tên khách hàng" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Mã số thuế</label>
+                                        <input type="text" id="tax-code" placeholder="Nhập mã số thuế" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Đến ngày</label>
+                                        <input type="date" id="end-date" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nhân viên phụ trách:
+                                            <select id="staff-in-charge" required>
+                                                <option value="">-- Chọn nhân viên --</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tài liệu liên quan</label>
+                                <div class="drop-area" id="drop-area">
+                                    <input type="file" id="related-docs" multiple accept=".doc,.docx,.pdf,.xls,.xlsx"
+                                        style="display: none;" />
+                                    <p class="drop-text">Kéo thả hoặc tải tệp lên tại đây</p>
+                                    <div class="file-list" id="file-list"></div>
+                                </div>
+                                <div class="file-note">Loại định dạng cho phép: doc, pdf, excel. Kích thước tối đa: 5MB.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thông tin thêm -->
+                        <div class="info-section additional-info">
+                            <h3>Thông tin thêm</h3>
+                            <div class="additional-info-container">
+                                <div class="additional-info-content">
+                                    <div class="form-group">
+                                        <label>Ngày ký hợp đồng</label>
+                                        <input type="date" id="sign-date" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nguồn đến</label>
+                                        <select id="source">
+
+                                            <option value="Facebook">Facebook</option>
+                                            <option value="Facebook">Instagram</option>
+                                            <option value="Facebook">Website</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Khu vực</label>
+                                        <select id="region">
+                                            <option value="">Đà Nẵng</option>
+                                            <option value="Hà Nội">Hà Nội</option>
+                                            <option value="Hà Nội">TP.Hồ Chí Minh</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Trạng thái</label>
+                                        <select id="status">
+                                            <option value="">Chưa gửi</option>
+
+                                            <option value="Chưa thanh toán">Chưa thanh toán</option>
+                                            <option value="Đã thanh toán">Đã thanh toán</option>
+                                            <option value="Quá hạn">Quá hạn</option>
+                                            <option value="Đã thanh toán một phần">Đã thanh toán một phần</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tên công ty (nếu có)</label>
+                                        <input type="text" id="company-name" placeholder="Nhập tên công ty" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="required">Tên sản phẩm/dịch vụ/giải pháp</label>
+                                        <input type="text" id="product-service"
+                                            placeholder="Phần mềm quản lý nguồn sách" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ghi chú</label>
+                                        <input type="text" id="note" placeholder="Nhập ghi chú" />
+                                    </div>
+                                </div>
+                                <div class="additional-info-empty"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mô tả chi tiết -->
+                    <div class="info-section description-section">
+                        <div class="description-header" onclick="toggleDescription()">
+                            <h3>Mô tả chi tiết</h3>
+                            <span class="dropdown-icon">▼</span>
+                        </div>
+                        <div id="description-content" class="description-content" style="display: none;">
+                            <div class="editor-toolbar">
+                                <select onchange="formatText('formatBlock', this.value); this.value=''">
+                                    <option value="">Format</option>
+                                    <option value="p">Paragraph</option>
+                                    <option value="h1">Heading 1</option>
+                                    <option value="h2">Heading 2</option>
+                                    <option value="h3">Heading 3</option>
+                                </select>
+                                <button onclick="formatText('bold')"><b>B</b></button>
+                                <button onclick="formatText('italic')"><i>I</i></button>
+                                <button onclick="formatText('underline')"><u>U</u></button>
+                                <button onclick="formatText('justifyLeft')">🖇️</button>
+                                <button onclick="formatText('justifyCenter')">🖇️</button>
+                                <button onclick="formatText('justifyRight')">🖇️</button>
+                                <button onclick="formatText('insertUnorderedList')">•</button>
+                                <button onclick="formatText('insertOrderedList')">1.</button>
+                            </div>
+                            <div id="editor" class="editor-content" contenteditable="true">
+                                <p class="editor-placeholder" style="color: #666; opacity: 0.6;">Nhập mô tả chi tiết</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thanh toán và Thông tin -->
+                    <div class="tables-section">
+                        <!-- Bảng Thanh toán (Bên trái) -->
+                        <div class="info-section payment-table">
+                            <div class="table-wrapper">
+                                <table id="payment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Ngày thanh toán</th>
+                                            <th>Tổng tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="payment-table-body">
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="#" class="add-link" onclick="addPaymentRow(); return false;">+
+                                                    Thêm</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Bảng Thông tin (Bên phải) -->
+                        <div class="info-section summary-table">
+                            <h3>Thông tin</h3>
+                            <div class="summary-content">
+                                <p><strong>Tổng giá trị hợp đồng:</strong> <span id="total-value">0</span></p>
+                                <p><strong>Đã thanh toán:</strong> <span id="paid-value">0</span></p>
+                                <p><strong>Còn lại:</strong> <span id="remaining-value">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    <!-- JavaScript -->
+    <script>
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const userId = queryParams.get("user_id");
+        const roleId = queryParams.get("role_id"); // ⬅️ Dòng bị thiếu
+        // Lấy user_id và role_id từ URL hiện tại
+        const urlParams = new URLSearchParams(window.location.search);
+        // Hàm chuyển trang đúng thư mục
+        function navigateTo(page) {
+            if (userId && roleId) {
+                window.location.href = `/asiaclient/admin/${page}?user_id=${userId}&role_id=${roleId}`;
+            } else {
+                alert("Thiếu user_id hoặc role_id. Không thể chuyển trang!");
+            }
+        }
+        if (userId) {
+            fetch(`../taikhoan/get_user_by_id.php?user_id=${userId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.full_name) {
+                        document.getElementById("userFullName").textContent = data.full_name;
+                    } else {
+                        document.getElementById("userFullName").textContent = "Người dùng";
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi tải tên người dùng:", err);
+                    document.getElementById("userFullName").textContent = "Không rõ";
+                });
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            loadStaff();
+            const userId = params.get("user_id");
+            const roleId = params.get("role_id");
+            const contractCode = params.get("contract_code"); // <- Bổ sung dòng này
+            if (!contractCode || !userId || !roleId) {
+                alert("Thiếu thông tin cần thiết!");
+                return;
+            }
+
+            fetch(`get_contract_by_code.php?contract_code=${contractCode}&user_id=${userId}&role_id=${roleId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success && data.contract) {
+                        const c = data.contract;
+                        document.getElementById("contract-id").value = c.contract_code || "";
+                        document.getElementById("customer-id").value = c.customer_id || "";
+                        document.getElementById("customer-name").value = c.customer_name || "";
+                        document.getElementById("contract-value").value = c.value || 0;
+                        document.getElementById("start-date").value = c.start_date || "";
+                        document.getElementById("end-date").value = c.end_date || "";
+                        document.getElementById("sign-date").value = c.signing_date || "";
+                        document.getElementById("status").value = c.status || "";
+                        document.getElementById("note").value = c.note || "";
+                    } else {
+                        alert("Không tìm thấy hợp đồng!");
+                    }
+                })
+
+
+            document.getElementById("updateContractForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const staffSelect = document.getElementById("staff-in-charge");
+                const staff_id = staffSelect.value;
+                const staff_in_charge_name = staffSelect.options[staffSelect.selectedIndex]?.textContent || "";
+                const start = new Date(document.getElementById("start-date").value);
+                const sign = new Date(document.getElementById("sign-date").value);
+                if (sign <= start) {
+                    alert("Ngày ký hợp đồng phải lớn hơn ngày bắt đầu!");
+                    return;
+                }
+
+                const data = {
+                    contract_code: document.getElementById("contract-id").value,
+                    customer_id: document.getElementById("customer-id").value,
+                    customer_name: document.getElementById("customer-name").value,
+                    value: parseFloat(document.getElementById("contract-value").value),
+                    start_date: document.getElementById("start-date").value,
+                    end_date: document.getElementById("end-date").value,
+                    signing_date: document.getElementById("sign-date").value,
+                    status: document.getElementById("status").value,
+                    note: document.getElementById("note").value,
+                    staff_id: staff_id,
+                    staff_in_charge_name: staff_in_charge_name
+                };
+                fetch("update_contract.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        if (res.success) {
+                            alert("Cập nhật hợp đồng thành công!");
+
+                            // Lấy lại user_id và role_id từ URL
+                            const params = new URLSearchParams(window.location.search);
+                            const user_id = params.get('user_id');
+                            const role_id = params.get('role_id');
+
+                            // Quay lại hopdong.html và giữ nguyên user_id, role_id
+                            window.location.href = `hopdong.html?user_id=${user_id}&role_id=${role_id}`;
+                        } else {
+                            alert("Lỗi: " + res.message);
+                        }
+                    })
+
+            });
+        });
+        document.getElementById("save-button").addEventListener("click", () => {
+            document.getElementById("updateContractForm").requestSubmit();
+        });
+        document.getElementById('cancel-button').addEventListener('click', function () {
+            window.history.back();
+        });
+        // Hàm load nhân viên phụ trách
+        function loadStaff(selectedStaffId = null) {
+            const staffSelect = document.getElementById("staff-in-charge");
+
+            if (roleId === "1") {
+                fetch("../taikhoan/get_users.php")
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            data.users.forEach(user => {
+                                const option = document.createElement("option");
+                                option.value = user.user_id;
+                                option.textContent = user.full_name;
+                                if (selectedStaffId && user.user_id == selectedStaffId) {
+                                    option.selected = true;
+                                }
+                                staffSelect.appendChild(option);
+                            });
+                        }
+                    });
+            } else {
+                fetch(`../taikhoan/get_user_by_id.php?user_id=${userId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            const user = data.user;
+                            const option = document.createElement("option");
+                            option.value = user.user_id;
+                            option.textContent = user.full_name;
+                            option.selected = true;
+                            staffSelect.appendChild(option);
+                            staffSelect.disabled = true;
+                        }
+                    });
+            }
+        }
+        document.getElementById("save-button").addEventListener("click", () => {
+            document.getElementById("updateContractForm").requestSubmit();
+        });
+
+    </script>

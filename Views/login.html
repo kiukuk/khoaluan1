@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASIASOFT - Đăng nhập</title>
+  <link rel="stylesheet" href="../Public/css/login.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="illustration">
+      <img src="../Public/img/Group 37338 (1).png" alt="Hình 1">
+
+    </div>
+    <div class="login-box">
+      <div class="language-selector">
+        <button class="lang-btn">Việt Nam ▾</button>
+        <div class="lang-dropdown">
+          <div>Tiếng Việt</div>
+          <div>English</div>
+        </div>
+      </div>
+
+      <form class="login-form" action="../Controllers/login.php" method="POST">
+        <h1 class="logo">
+          <img src="../Public/img/image 1.png" alt="Logo" />
+        </h1>
+        <input type="text" name="username" placeholder="Email / Số điện thoại" required />
+
+        <div class="password-wrapper">
+          <input type="password" name="password" id="password" placeholder="Mật khẩu đăng nhập" required />
+          <span class="toggle-password" onclick="togglePassword(this)">
+            <img src="../Public/img/eye.png" alt="Ẩn hiện mật khẩu" id="toggle-icon">
+          </span>
+        </div>
+
+
+        <script>
+          function togglePassword(icon) {
+            const input = document.getElementById("password");
+            const img = icon.querySelector("img"); // lấy thẻ img bên trong span
+            const isHidden = input.type === "password";
+
+            input.type = isHidden ? "text" : "password";
+            img.src = isHidden ? "../Public/img/eye.png" : "../Public/img/eye-slash.png";
+          }
+        </script>
+
+
+
+        <div class="options">
+          <label><input type="checkbox" name="remember"> Ghi nhớ đăng nhập</label>
+          <a href="forget.html">Quên mật khẩu?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

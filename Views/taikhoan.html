@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/taikhoan.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="#" class="menu-link">
+                <div class="menu-item active">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="test.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="#" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="test2.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="#" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="#" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+            <a href="#" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/ZXvRTjMAJS.png"
+                        alt="Request" class="menu-icon" />
+                    <span>Yêu cầu</span>
+                </div>
+            </a>
+        </nav>
+
+
+        <!-- Content -->
+        <section class="content">
+            <div class="header-content">
+                <h2>Tài khoản</h2>
+                <!-- Search and Buttons -->
+                <div class="search-bar">
+                    <div class="search-input">
+                        <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/QJMk6OdSJY.png"
+                            alt="Search" class="icon" />
+                        <span>Tìm kiếm</span>
+                        
+                    </div>
+                    <div class="button-group">
+                        <button href="requests.html" class="export-btn" id="requestBtn">
+                            Yêu cầu (<span id="requestCount">0</span>)
+                        </button>
+                        <button class="add-btn" id="actionBtn" onclick="showAddModal()">
+                            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/ESxdzEvcVJ.png"
+                                alt="Add" class="icon" />
+                            Tài khoản
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter and Table -->
+            <div class="main-content">
+                <div class="filter">
+                    <div class="filter-block">
+                        <div class="filter-title">
+                            <span>Trạng thái tài khoản</span>
+                            <img src="../Public/img/thanhso.png" alt="" class="icon" />
+                        </div>
+                        <div class="filter-items">
+                            <div class="filter-item">
+                                <input type="radio" name="statusFilter" value="all" checked
+                                    onchange="filterAccounts()" />
+                                <span>Tất cả</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="radio" name="statusFilter" value="active" onchange="filterAccounts()" />
+                                <span>Đang hoạt động</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="radio" name="statusFilter" value="inactive" onchange="filterAccounts()" />
+                                <span>Ngừng hoạt động</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Section -->
+                <div class="table-section">
+                    <div class="table">
+                        <div class="table-header">
+                            <div class="table-cell checkbox"><input type="checkbox" id="selectAllCheckbox"
+                                    onchange="toggleSelectAll()" /></div>
+                            <div class="table-cell">Mã nhân viên</div>
+                            <div class="table-cell">Tên nhân viên</div>
+                            <div class="table-cell">Số điện thoại</div>
+                            <div class="table-cell">Email</div>
+                            <div class="table-cell">Ngày tạo</div>
+                            <div class="table-cell">Trạng thái</div>
+                        </div>
+                        <div class="table-body" id="accountsTableBody">
+                            <!-- Dữ liệu sẽ được thêm động bằng JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal for Adding Account -->
+        <div class="modal" id="addModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Thêm tài khoản</h3>
+                    <button class="close-btn" onclick="hideAddModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addFullName">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="addFullName" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="addAddress">Địa chỉ</label>
+                            <input type="text" id="addAddress" value="" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addPhone">Số điện thoại <span class="required">*</span></label>
+                            <input type="text" id="addPhone" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="addPosition">Chức vụ</label>
+                            <select id="addPosition">
+                                <option value="Quản lý" selected>Quản lý</option>
+                                <option value="Nhân viên kinh doanh">Nhân viên kinh doanh</option>
+                                <option value="Nhân viên kế toán">Nhân viên kế toán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addPassword">Mật khẩu <span class="required">*</span></label>
+                            <input type="password" id="addPassword" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="addEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="addEmail" value="" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="addNote">Ghi chú</label>
+                            <textarea id="addNote"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="addStatus">Trạng thái hoạt động</label>
+                            <select id="addStatus">
+                                <option value="active" selected>Đang hoạt động</option>
+                                <option value="inactive">Ngừng hoạt động</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="save-btn" onclick="addAccount()">Lưu</button>
+                    <button class="cancel-btn" onclick="hideAddModal()">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for User Info -->
+        <div class="modal" id="userInfoModal" style="display: none;">
+            <div class="user-info-modal-content">
+                <div class="modal-header">
+                    <h3>Thông tin tài khoản</h3>
+                    <button class="close-btn" onclick="hideUserInfoModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="info-columns">
+                        <div class="info-column">
+                            <div class="info-group">
+                                <label>Tên người dùng:</label>
+                                <span id="infoFullName"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Mã nhân viên:</label>
+                                <span id="infoEmployeeId"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Số điện thoại:</label>
+                                <span id="infoPhone"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Email:</label>
+                                <span id="infoEmail"></span>
+                            </div>
+                        </div>
+                        <div class="info-column">
+                            <div class="info-group">
+                                <label>Ngày sinh:</label>
+                                <span id="infoBirthDate"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Chức vụ:</label>
+                                <span id="infoPosition"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Địa chỉ:</label>
+                                <span id="infoAddress"></span>
+                            </div>
+                            <div class="info-group">
+                                <label>Ghi chú:</label>
+                                <span id="infoNote"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="update-btn" onclick="showUpdateModal()">Chỉnh sửa</button>
+                    <button class="deactivate-btn" id="deactivateBtn" onclick="deactivateUser()">Ngừng hoạt
+                        động</button>
+                    <button class="delete-btn" onclick="showDeleteConfirmModalFromInfo()">Xóa tài khoản</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Delete Confirmation -->
+        <div class="modal" id="deleteConfirmModal" style="display: none;">
+            <div class="delete-confirm-modal-content">
+                <div class="modal-header">
+                    <h3>Xóa tài khoản</h3>
+                    <button class="close-btn" onclick="hideDeleteConfirmModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa tài khoản này không?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="confirm-delete-btn" onclick="confirmDelete()">Đồng ý</button>
+                    <button class="cancel-btn" onclick="hideDeleteConfirmModal()">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal xác nhận xóa -->
+        <div class="modal" id="deleteConfirmModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Xác nhận xóa tài khoản</h3>
+                    <button onclick="hideDeleteConfirmModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc muốn xóa tài khoản này không?</p>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="confirmDelete()">Xác nhận</button>
+                    <button onclick="hideDeleteConfirmModal()">Hủy</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal for Updating Account -->
+        <div class="modal" id="updateModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Chỉnh sửa thông tin</h3>
+                    <button class="close-btn" onclick="hideUpdateModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updateFullName">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="updateFullName" placeholder="Nhập họ và tên" />
+                        </div>
+                        <div class="form-group">
+                            <label for="updateRole">Chức vụ</label>
+                            <select id="updateRole">
+                                <option value="1">Quản lý</option>
+                                <option value="2">Nhân viên kinh doanh</option>
+                                <option value="3">Nhân viên kế toán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updatePhone">Số điện thoại <span class="required">*</span></label>
+                            <input type="text" id="updatePhone" placeholder="Nhập số điện thoại" />
+                        </div>
+                        <div class="form-group">
+                            <label for="updateEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="updateEmail" placeholder="Nhập email" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updatePassword">Mật khẩu <span class="required">*</span></label>
+                            <input type="password" id="updatePassword" placeholder="Nhập mật khẩu" />
+                        </div>
+                        <div class="form-group">
+                            <label for="updateBirthDate">Ngày sinh</label>
+                            <input type="date" id="updateBirthDate" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updateAddress">Địa chỉ</label>
+                            <input type="text" id="updateAddress" placeholder="Nhập địa chỉ" />
+                        </div>
+                        <div class="form-group">
+                            <label for="updateStatus">Trạng thái hoạt động</label>
+                            <select id="updateStatus">
+                                <option value="active">Đang hoạt động</option>
+                                <option value="inactive">Ngừng hoạt động</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="updateNote">Ghi chú</label>
+                            <textarea id="updateNote" placeholder="Ghi chú"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="save-btn" onclick="updateAccount()">Cập nhật</button>
+                    <button class="cancel-btn" onclick="hideUpdateModal()">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="result">Có <strong id="resultCount">0</strong> kết quả</div>
+            <div class="pagination">
+                <button class="page-btn"><img
+                        src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kwLOQnT67c.png" alt="Prev"
+                        class="icon" /></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><img
+                        src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/JhxTR82Dok.png" alt="Next"
+                        class="icon" /></button>
+            </div>
+            <div class="page-size">
+                <button>10 / trang <img
+                        src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/hXiMXOR6sw.png"
+                        alt="Chevron Down" class="icon" /></button>
+            </div>
+            <div class="go-to-page">
+                <span>Đi đến trang</span>
+                <button>1</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const queryParams = new URLSearchParams(window.location.search);
+        const userId = queryParams.get("user_id");
+        const roleId = queryParams.get("role_id"); // ⬅️ Dòng bị thiếu
+        // Lấy user_id và role_id từ URL hiện tại
+        const urlParams = new URLSearchParams(window.location.search);
+        // Hàm chuyển trang đúng thư mục
+        function navigateTo(page) {
+            if (userId && roleId) {
+                window.location.href = `/1/Views/${page}?user_id=${userId}&role_id=${roleId}`;
+            } else {
+                alert("Thiếu user_id hoặc role_id. Không thể chuyển trang!");
+            }
+        }
+        if (userId) {
+            fetch(`../Controllers/get_user_by_id.php?user_id=${userId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.full_name) {
+                        document.getElementById("userFullName").textContent = data.full_name;
+                    } else {
+                        document.getElementById("userFullName").textContent = "Người dùng";
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi tải tên người dùng:", err);
+                    document.getElementById("userFullName").textContent = "Không rõ";
+                });
+        }
+
+        let accounts = [];
+        let requests = [];
+        let currentRowId = null;
+
+        // Gọi PHP để lấy dữ liệu tài khoản từ MySQL
+        fetch("../Controllers/taikhoan.php")
+            .then(response => response.json())
+            .then(data => {
+                accounts = data;
+                filterAccounts();
+                updateRequestCount();
+            })
+            .catch(error => {
+                console.error("Lỗi khi tải dữ liệu tài khoản:", error);
+            });
+        function updateRequestCount() {
+            const requestBtn = document.getElementById("requestBtn");
+            requestBtn.textContent = `Yêu cầu (${requests.length})`;
+        }
+        document.getElementById("requestBtn").addEventListener("click", function (e) {
+            e.preventDefault();
+            if (userId && roleId) {
+                window.location.href = `requests.html?user_id=${userId}&role_id=${roleId}`;
+            } else {
+                alert("Thiếu thông tin người dùng hoặc vai trò.");
+            }
+        });
+        function toggleSelectAll() {
+            const selectAllCheckbox = document.getElementById("selectAllCheckbox");
+            const checkboxes = document.querySelectorAll('#accountsTableBody input[type="checkbox"]');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+
+            updateActionButton(); // Cập nhật nút Xóa/Tài khoản
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            if (roleId !== "1") {
+                alert("Bạn không có quyền truy cập vào trang này!");
+                window.history.back();
+                return;
+            }
+
+            // Nếu đúng role_id = 1 thì tiếp tục load trang
+            fetch("../Controllers/count_pending_requests.php")
+                .then(response => response.json())
+                .then(data => {
+                    const count = data.pending_count || 0;
+                    document.getElementById("requestBtn").innerHTML = `Yêu cầu (${count})`;
+                })
+                .catch(error => {
+                    console.error("Lỗi khi tải số lượng yêu cầu:", error);
+                });
+        });
+
+
+        // Tự động gọi sau khi trang load
+
+        function filterAccounts() {
+            const selectedStatus = document.querySelector('input[name="statusFilter"]:checked').value;
+            const tableBody = document.getElementById("accountsTableBody");
+            tableBody.innerHTML = "";
+
+            let filteredAccounts = accounts;
+
+            if (selectedStatus === "active") {
+                filteredAccounts = accounts.filter(account => account.status === "active");
+            } else if (selectedStatus === "inactive") {
+                filteredAccounts = accounts.filter(account => account.status === "inactive");
+            }
+
+            document.getElementById("resultCount").textContent = filteredAccounts.length;
+
+            filteredAccounts.forEach(account => {
+                const newRow = document.createElement("div");
+                newRow.className = "table-row";
+                newRow.id = account.rowId;
+                newRow.innerHTML = `
+            <div class="table-cell checkbox">
+                <input type="checkbox" onchange="updateActionButton()" />
+            </div>
+            <div class="table-cell">NV${account.employeeId}</div>
+            <div class="table-cell name-cell" onclick="showUserInfoModal('${account.rowId}')">${account.fullName}</div>
+            <div class="table-cell">${account.phone}</div>
+            <div class="table-cell">${account.email}</div>
+            <div class="table-cell">${account.createdAt}</div>
+            <div class="table-cell">
+                <span class="status ${account.status}">
+                    ${account.status === "active" ? "Đang hoạt động" : "Ngừng hoạt động"}
+                </span>
+            </div>
+        `;
+                tableBody.appendChild(newRow);
+            });
+        }
+
+        function updateActionButton() {
+            const checkboxes = document.querySelectorAll('#accountsTableBody input[type="checkbox"]');
+            const actionBtn = document.getElementById("actionBtn");
+
+            const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+            if (anyChecked) {
+                actionBtn.textContent = "Xóa tài khoản";
+                actionBtn.onclick = showDeleteConfirmModalMultiple;
+            } else {
+                actionBtn.innerHTML = `
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/ESxdzEvcVJ.png" alt="Add" class="icon" />
+            Tài khoản
+        `;
+                actionBtn.onclick = showAddModal;
+            }
+        }
+        function deleteSelectedAccounts() {
+            const selectedCheckboxes = document.querySelectorAll('#accountsTableBody input[type="checkbox"]:checked');
+            const userIds = Array.from(selectedCheckboxes).map(cb => {
+                return cb.closest('.table-row').id.replace('row-', '');
+            });
+
+            if (userIds.length === 0) return;
+
+            fetch("../Controllers/delete_user.php", {  // bạn cần viết thêm file PHP này
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ user_ids: userIds })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        location.reload();
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi xóa nhiều tài khoản:", err);
+                });
+        }
+        function showDeleteConfirmModalMultiple() {
+            const confirmed = confirm("Bạn có chắc chắn muốn xóa các tài khoản đã chọn?");
+            if (confirmed) {
+                deleteSelectedAccounts();
+            }
+        }
+
+
+        function showUpdateModal() {
+            const account = accounts.find(acc => acc.rowId === currentRowId);
+            if (!account) return;
+
+            document.getElementById("updateFullName").value = account.fullName || "";
+            document.getElementById("updatePhone").value = account.phone || "";
+            document.getElementById("updateEmail").value = account.email || "";
+            document.getElementById("updatePassword").value = "";
+            document.getElementById("updateBirthDate").value = account.birth_date !== "Chưa cập nhật" ? account.birth_date : "";
+            document.getElementById("updateAddress").value = account.address || "";
+            document.getElementById("updateNote").value = account.note || "";
+            document.getElementById("updateStatus").value = account.status || "inactive";
+            document.getElementById("updateRole").value = account.role_id || "";
+
+            // Ẩn modal thông tin và hiển thị modal cập nhật
+            document.getElementById("userInfoModal").style.display = "none";
+            document.getElementById("updateModal").style.display = "flex";
+        }
+        function hideUpdateModal() {
+            document.getElementById("updateModal").style.display = "none";
+        } function hideUpdateModal() {
+            document.getElementById("updateModal").style.display = "none";
+        }
+        function deactivateUser() {
+            if (!currentRowId) return;
+
+            const userId = currentRowId.replace("row-", "");
+
+            fetch("../Controllers/deactivate_user.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ user_id: userId })
+            })
+                .then(res => res.json())
+                .then(result => {
+                    alert(result.message);
+                    location.reload(); // Reload lại bảng để thấy kết quả
+                })
+                .catch(err => {
+                    console.error("Lỗi khi cập nhật trạng thái:", err);
+                    alert("Đã xảy ra lỗi khi cập nhật trạng thái.");
+                });
+        }
+
+
+
+        function updateAccount() {
+            const fullName = document.getElementById("updateFullName")?.value?.trim() || "";
+            const phone = document.getElementById("updatePhone")?.value?.trim() || "";
+            const email = document.getElementById("updateEmail")?.value?.trim() || "";
+            const password = document.getElementById("updatePassword")?.value || "";
+            const birthDate = document.getElementById("updateBirthDate")?.value || null;
+            const address = document.getElementById("updateAddress")?.value?.trim() || "";
+            const note = document.getElementById("updateNote")?.value?.trim() || "";
+            const status = document.getElementById("updateStatus")?.value || "inactive";
+            const roleId = parseInt(document.getElementById("updateRole")?.value) || null;
+
+            // Nếu bạn vẫn dùng updatePosition, có thể xóa nếu đã thay bằng role_id
+            // const position = document.getElementById("updatePosition")?.value || "";
+
+            if (!fullName || !phone || !email || !password) {
+                alert("Vui lòng điền đầy đủ các trường bắt buộc (Họ tên, SĐT, Email, Mật khẩu)");
+                return;
+            }
+
+            const updatedData = {
+                full_name: fullName,
+                phone_number: phone,
+                email: email,
+                password: password,
+                birth_date: birthDate,
+                address: address,
+                status: status,
+                note: note,
+                role_id: roleId,
+                rowId: currentRowId
+            };
+
+            fetch("../Controllers/update_user.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedData)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    alert(result.message || "Cập nhật thành công.");
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error("Lỗi khi cập nhật:", error);
+                    alert("Cập nhật thất bại. Vui lòng thử lại.");
+                });
+        }
+
+
+        function showDeleteConfirmModalFromInfo() {
+            document.getElementById("userInfoModal").style.display = "none";
+            document.getElementById("deleteConfirmModal").style.display = "flex";
+        }
+
+        function showUserInfoModal(rowId) {
+            const account = accounts.find(acc => acc.rowId === rowId);
+            if (!account) return;
+
+            currentRowId = rowId;
+
+            document.getElementById("infoEmployeeId").textContent = "NV" + account.employeeId;
+            document.getElementById("infoFullName").textContent = account.fullName;
+            document.getElementById("infoPhone").textContent = account.phone;
+            document.getElementById("infoEmail").textContent = account.email;
+            document.getElementById("infoBirthDate").textContent = account.birth_date || "Chưa cập nhật";
+            document.getElementById("infoAddress").textContent = account.address || "Chưa cập nhật";
+            document.getElementById("infoNote").textContent = account.note || "Không có ghi chú";
+            const roleMap = {
+                1: "Quản lý",
+                2: "Nhân viên kinh doanh",
+                3: "Nhân viên kế toán"
+            };
+
+            document.getElementById("infoPosition").textContent = roleMap[account.role_id] || "Chưa cập nhật";
+
+            const deactivateBtn = document.getElementById("deactivateBtn");
+            if (account.status === "active") {
+                deactivateBtn.textContent = "Ngừng hoạt động";
+                deactivateBtn.onclick = () => deactivateUser();
+            } else {
+                deactivateBtn.textContent = "Kích hoạt";
+                deactivateBtn.onclick = () => activateUser(); // nếu muốn hỗ trợ bật lại
+            }
+
+            document.getElementById("userInfoModal").style.display = "flex";
+        }
+        function activateUser() {
+            if (!currentRowId) return;
+
+            const userId = currentRowId.replace("row-", "");
+
+            fetch("../Controllers/activate_user.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ user_id: userId })
+            })
+                .then(res => res.json())
+                .then(result => {
+                    alert(result.message);
+                    location.reload(); // Tải lại dữ liệu mới
+                })
+                .catch(err => {
+                    console.error("Lỗi khi kích hoạt:", err);
+                    alert("Đã xảy ra lỗi khi kích hoạt tài khoản.");
+                });
+        }
+
+        function hideUserInfoModal() {
+            document.getElementById("userInfoModal").style.display = "none";
+            currentRowId = null;
+        }
+        function hideDeleteConfirmModal() {
+            const modal = document.getElementById("deleteConfirmModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Tạm placeholder hàm cập nhật trạng thái (chưa có PHP thực thi)
+        function toggleUserStatus(rowId, newStatus) {
+            const userId = rowId.replace("row-", "");
+            fetch("../Controllers/update_user.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ user_id: userId, status: newStatus })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("✅ Trạng thái đã được cập nhật!");
+                        location.reload();
+                    } else {
+                        alert("❌ Lỗi cập nhật trạng thái!");
+                    }
+                })
+                .catch(err => {
+                    alert("❌ Lỗi kết nối server: " + err);
+                });
+        }
+        function showAddModal() {
+            document.getElementById("addModal").style.display = "flex";
+        }
+
+        function hideAddModal() {
+            document.getElementById("addModal").style.display = "none";
+        }
+
+        function addAccount() {
+            const fullName = document.getElementById("addFullName").value;
+            const phone = document.getElementById("addPhone").value;
+            const email = document.getElementById("addEmail").value;
+            const password = document.getElementById("addPassword").value;
+            const address = document.getElementById("addAddress").value;
+            const position = document.getElementById("addPosition").value;
+            const status = document.getElementById("addStatus").value;
+
+            // Bạn có thể truyền role_id từ URL
+            const role_id = new URLSearchParams(window.location.search).get('role_id') || 2;
+
+            if (!fullName || !phone || !email || !password) {
+                alert("Vui lòng điền đầy đủ các trường bắt buộc!");
+                return;
+            }
+
+            fetch("../Controllers/add_user.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    full_name: fullName,
+                    phone: phone,
+                    email: email,
+                    password: password,
+                    address: address,
+                    status: status,
+                    role_id: parseInt(role_id)
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        location.reload(); // hoặc filterAccounts();
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi thêm tài khoản:", err);
+                });
+        }
+        function confirmDelete() {
+            if (!currentRowId) return;
+
+            const userId = parseInt(currentRowId.replace("row-", ""));
+            if (!userId) return;
+
+            fetch("../Controllers/delete_user.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ user_id: userId })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.success) {
+                        hideDeleteConfirmModal();
+                        location.reload(); // Hoặc gọi lại filterAccounts() để cập nhật danh sách
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi xóa:", err);
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>

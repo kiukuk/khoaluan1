@@ -1,0 +1,2 @@
+[26-Apr-2025 07:29:49 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\asiaclient\admin\hopdong\delete_contract.php on line 11
+[26-Apr-2025 07:33:31 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\asiaclient\admin\hopdong\delete_contract.php on line 11

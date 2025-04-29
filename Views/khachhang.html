@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="../Public/css/test2.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo"
+                class="logo" />
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Support"
+                    class="icon" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Flag"
+                    class="icon flag" />
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png"
+                    alt="Notifications" class="icon" />
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png" alt="Avatar"
+                        class="avatar" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item active">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Dashboard" class="menu-icon" />
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item ">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Account" class="menu-icon" />
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Contract" class="menu-icon" />
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="khachhang.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Customer" class="menu-icon" />
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png" alt="Report"
+                        class="menu-icon" />
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png" alt="Data"
+                        class="menu-icon" />
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+           
+        </nav>
+        <!-- Nội dung chính -->
+        <section class="content">
+            <div class="header-content">
+                <h2>Khách hàng</h2>
+                <div class="search-bar">
+                    <div class="search-input">
+                        <span><img src="../Public/img/search-normal.png" alt=""></span>
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm khách hàng"
+                            oninput="filterCustomers()">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Filter Section -->
+                <div class="filter">
+                    <div class="filter-block">
+                        <div class="filter-title">
+                            <span>Trạng thái</span>
+                            <span><img src="../Public/img/thanhso.png" alt=""></span>
+                        </div>
+                        <div class="filter-items" id="statusFilter">
+                            <div class="filter-item">
+                                <input type="checkbox" value="completed" onchange="filterCustomers()">
+                                <span>Hoàn thành</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" value="in-progress" onchange="filterCustomers()">
+                                <span>Đang làm</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" value="handover" onchange="filterCustomers()">
+                                <span>Bàn giao</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" value="paused" onchange="filterCustomers()">
+                                <span>Tạm ngưng</span>
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox" value="not-started" onchange="filterCustomers()">
+                                <span>Chưa bắt đầu</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-title">
+                            <span>Hạn bàn giao</span>
+                            <span><img src="../Public/img/thanhso.png" alt=""></span>
+                        </div>
+                        <div class="filter-items">
+                            <div class="filter-label">Từ</div>
+                            <div class="filter-input">
+                                <input type="date" id="deadlineFrom" class="date-input" onchange="filterCustomers()">
+                                <span class="calendar-icon"><img src="../Public/img/calendar-2.png" alt=""></span>
+                            </div>
+                            <div class="filter-label">Đến</div>
+                            <div class="filter-input">
+                                <input type="date" id="deadlineTo" class="date-input" onchange="filterCustomers()">
+                                <span class="calendar-icon"><img src="../Public/img/calendar-2.png" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-title">
+                            <span>Nguồn khách hàng</span>
+                            <span><img src="../Public/img/thanhso.png" alt=""></span>
+                        </div>
+                        <div class="filter-items">
+                            <div class="filter-search">
+                                <span><img src="../Public/img/search-normal.png" alt=""></span>
+                                <input type="text" id="sourceFilter" placeholder="Tìm kiếm nguồn khách hàng"
+                                    oninput="filterCustomers()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-title">
+                            <span>Nhân viên phụ trách</span>
+                            <span><img src="../Public/img/thanhso.png" alt=""></span>
+                        </div>
+                        <div class="filter-items">
+                            <div class="filter-search">
+                                <span><img src="../Public/img/search-normal.png" alt=""></span>
+                                <input type="text" id="staffFilter" placeholder="Tìm kiếm nhân viên phụ trách"
+                                    oninput="filterCustomers()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Section -->
+                <div class="table-section">
+                    <div class="table">
+                        <div class="table-header">
+                            <div class="table-cell checkbox">
+                                <input type="checkbox" id="selectAll" onclick="toggleSelectAll()">
+                            </div>
+                            <div class="table-cell">Mã khách hàng</div>
+                            <div class="table-cell">Tên khách hàng</div>
+                            <div class="table-cell">Số điện thoại</div>
+                            <div class="table-cell">Hạn bàn giao</div>
+                            <div class="table-cell">Nguồn khách hàng</div>
+                            <div class="table-cell">Nhân viên phụ trách</div>
+                            <div class="table-cell">Trạng thái</div>
+                        </div>
+                        <div id="customerTableBody">
+                            <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Section -->
+            <div class="footer">
+                <div class="result">
+                    Hiển thị <strong id="currentResults">0</strong> trong tổng số <strong id="totalResults">0</strong>
+                    kết quả
+                </div>
+                <div class="pagination" id="pagination">
+                    <button class="page-btn" onclick="changePage('prev')" disabled>◄</button>
+                    <!-- Các nút trang sẽ được thêm bằng JavaScript -->
+                    <button class="page-btn" onclick="changePage('next')" disabled>►</button>
+                </div>
+                <div class="page-size">
+                    <button id="pageSizeBtn" onclick="togglePageSizeDropdown()">
+                        10 <span>▼</span>
+                    </button>
+                </div>
+                <div class="go-to-page">
+                    <span>Đi tới</span>
+                    <input type="number" id="goToPageInput" min="1">
+                    <button onclick="goToPage()">→</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Thông Tin Khách Hàng -->
+    <div class="modal" id="customerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thông tin khách hàng</h3>
+                <span class="modal-close" onclick="closeCustomerModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <div class="modal-field">
+                        <label>Mã khách hàng:</label>
+                        <span id="modalCustomerId"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Tên khách hàng:</label>
+                        <span id="modalCustomerName"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Số điện thoại:</label>
+                        <span id="modalPhoneNumber"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Email:</label>
+                        <span id="modalEmail"></span>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-field">
+                        <label>Hạn bàn giao:</label>
+                        <span id="modalDeadline"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Nguồn khách hàng:</label>
+                        <span id="modalCustomerSource"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Nhân viên phụ trách</label>
+                        <span id="modalAssignedStaff"></span>
+                    </div>
+                    <div class="modal-field">
+                        <label>Trạng thái</label>
+                        <span id="modalStatus"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="add-customer.html" class="edit-btn">Chỉnh sửa</a>
+                <button class="delete-btn" onclick="showDeleteConfirmModal()">Xóa</button>
+                <button class="cancel-btn" onclick="closeCustomerModal()">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Xác Nhận Xóa -->
+    <div class="modal" id="deleteConfirmModal">
+        <div class="modal-content delete-confirm-modal">
+            <div class="modal-header">
+                <h3>Xác nhận xóa</h3>
+                <span class="modal-close" onclick="closeDeleteConfirmModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa khách hàng này không?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeDeleteConfirmModal()">Hủy</button>
+                <button class="confirm-btn" onclick="confirmDeleteCustomer()">Xóa</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- JavaScript -->
+    <script>
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const userId = queryParams.get("user_id");
+        const roleId = queryParams.get("role_id"); // ⬅️ Dòng bị thiếu
+        // Lấy user_id và role_id từ URL hiện tại
+        const urlParams = new URLSearchParams(window.location.search);
+        // Hàm chuyển trang đúng thư mục
+        function navigateTo(page) {
+            if (userId && roleId) {
+                window.location.href = `/1/Views/${page}?user_id=${userId}&role_id=${roleId}`;
+            } else {
+                alert("Thiếu user_id hoặc role_id. Không thể chuyển trang!");
+            }
+        }
+        if (userId) {
+            fetch(`../Controllers/get_user_by_id.php?user_id=${userId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.full_name) {
+                        document.getElementById("userFullName").textContent = data.full_name;
+                    } else {
+                        document.getElementById("userFullName").textContent = "Người dùng";
+                    }
+                })
+                .catch(err => {
+                    console.error("Lỗi khi tải tên người dùng:", err);
+                    document.getElementById("userFullName").textContent = "Không rõ";
+                });
+        }
+
+        // Dữ liệu khách hàng (giả lập)
+        let customers = JSON.parse(localStorage.getItem('customers')) || [
+            { customerId: "HD000001", name: "Nguyễn Văn A", phoneNumber: "0123456789", email: "nguyenvana@example.com", deadline: "2025-04-20", customerSource: "Website", assignedStaff: "Nguyễn Văn B", status: "completed", rowId: `row-${Date.now()}` },
+            { customerId: "HD000002", name: "Trần Thị B", phoneNumber: "0987654321", email: "tranthib@example.com", deadline: "2025-04-21", customerSource: "Giới thiệu", assignedStaff: "Trần Văn C", status: "in-progress", rowId: `row-${Date.now() + 1}` }
+        ];
+        // Gán rowId nếu chưa có (đảm bảo rowId là duy nhất và ổn định)
+customers.forEach((c, index) => {
+    if (!c.rowId) {
+        c.rowId = `row-${c.customerId || index}`;  // Tạo từ mã khách hàng hoặc chỉ số
+    }
+});
+
+        let currentPage = 1;
+        let pageSize = 10;
+        let filteredCustomers = [...customers];
+
+        // Hiển thị danh sách khách hàng
+        function renderCustomers() {
+            const tableBody = document.getElementById('customerTableBody');
+            tableBody.innerHTML = '';
+
+            const start = (currentPage - 1) * pageSize;
+            const end = start + pageSize;
+            const paginatedCustomers = filteredCustomers.slice(start, end);
+
+            paginatedCustomers.forEach(customer => {
+                const row = document.createElement('div');
+                row.classList.add('table-row');
+                row.id = customer.rowId;
+                row.innerHTML = `
+                    <div class="table-cell checkbox">
+                        <input type="checkbox" class="row-checkbox" data-id="${customer.rowId}" onchange="updateActionButton()">
+                    </div>
+                    <div class="table-cell">${customer.customerId}</div>
+                    <div class="table-cell" onclick="showCustomerModal('${customer.rowId}')">${customer.name}</div>
+                    <div class="table-cell">${customer.phoneNumber}</div>
+                    <div class="table-cell">${customer.deadline || 'Chưa cập nhật'}</div>
+                    <div class="table-cell">${customer.customerSource || 'Chưa cập nhật'}</div>
+                    <div class="table-cell">${customer.assignedStaff || 'Chưa cập nhật'}</div>
+                    <div class="table-cell">
+                        <span class="status ${customer.status}">${getStatusText(customer.status)}</span>
+                    </div>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            updatePagination();
+            updateResults();
+            updateActionButton();
+        }
+
+        // Chuyển đổi trạng thái thành văn bản
+        function getStatusText(status) {
+            switch (status) {
+                case 'completed': return 'Hoàn thành';
+                case 'in-progress': return 'Đang làm';
+                case 'handover': return 'Bàn giao';
+                case 'paused': return 'Tạm ngưng';
+                case 'not-started': return 'Chưa bắt đầu';
+                default: return 'Không xác định';
+            }
+        }
+
+        // Chọn/t bỏ chọn tất cả
+        function toggleSelectAll() {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+            rowCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+            updateActionButton();
+        }
+
+        // Cập nhật nút hành động (Thêm/Xóa)
+        function updateActionButton() {
+            const actionButton = document.getElementById('actionBtn');
+            const checkedCheckboxes = document.querySelectorAll('.row-checkbox:checked');
+
+            if (checkedCheckboxes.length > 0) {
+                actionButton.textContent = 'Xóa';
+                actionButton.classList.remove('add-btn');
+                actionButton.classList.add('delete-customers-btn');
+                actionButton.onclick = deleteSelectedCustomers; // Gán sự kiện xóa
+            } else {
+                actionButton.textContent = none;
+                actionButton.classList.remove('delete-customers-btn');
+                actionButton.classList.add('add-btn');
+                actionButton.onclick = () => window.location.href = none; // Gán sự kiện thêm
+            }
+        }
+
+        // Xóa các khách hàng được chọn
+        function deleteSelectedCustomers() {
+            const checkboxes = document.querySelectorAll('.row-checkbox:checked');
+            if (checkboxes.length === 0) {
+                alert('Vui lòng chọn ít nhất một khách hàng để xóa!');
+                return;
+            }
+
+            if (confirm('Bạn có chắc chắn muốn xóa các khách hàng đã chọn?')) {
+                const idsToDelete = Array.from(checkboxes).map(checkbox => checkbox.getAttribute('data-id'));
+                customers = customers.filter(customer => !idsToDelete.includes(customer.rowId));
+                filteredCustomers = filteredCustomers.filter(customer => !idsToDelete.includes(customer.rowId));
+                localStorage.setItem('customers', JSON.stringify(customers));
+                renderCustomers();
+                document.getElementById('selectAll').checked = false;
+            }
+        }
+
+        // Lọc khách hàng
+        function filterCustomers() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const statusCheckboxes = document.querySelectorAll('#statusFilter input:checked');
+            const selectedStatuses = Array.from(statusCheckboxes).map(cb => cb.value);
+            const deadlineFrom = document.getElementById('deadlineFrom').value;
+            const deadlineTo = document.getElementById('deadlineTo').value;
+            const sourceFilter = document.getElementById('sourceFilter').value.toLowerCase();
+            const staffFilter = document.getElementById('staffFilter').value.toLowerCase();
+
+            filteredCustomers = customers.filter(customer => {
+                const matchesSearch = customer.name.toLowerCase().includes(searchInput);
+                const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(customer.status);
+                const matchesDeadline = (!deadlineFrom || customer.deadline >= deadlineFrom) && (!deadlineTo || customer.deadline <= deadlineTo);
+                const matchesSource = !sourceFilter || (customer.customerSource && customer.customerSource.toLowerCase().includes(sourceFilter));
+                const matchesStaff = !staffFilter || (customer.assignedStaff && customer.assignedStaff.toLowerCase().includes(staffFilter));
+                return matchesSearch && matchesStatus && matchesDeadline && matchesSource && matchesStaff;
+            });
+
+            currentPage = 1; // Reset về trang đầu tiên khi lọc
+            renderCustomers();
+        }
+
+        // Cập nhật phân trang
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredCustomers.length / pageSize);
+            const pagination = document.getElementById('pagination');
+            const prevBtn = pagination.children[0];
+            const nextBtn = pagination.children[pagination.children.length - 1];
+            const pageButtons = [];
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.classList.add('page-btn');
+                btn.textContent = i;
+                btn.onclick = () => {
+                    currentPage = i;
+                    renderCustomers();
+                };
+                if (i === currentPage) btn.classList.add('active');
+                pageButtons.push(btn);
+            }
+
+            while (pagination.children.length > 2) {
+                pagination.removeChild(pagination.children[1]);
+            }
+
+            pageButtons.forEach(btn => {
+                pagination.insertBefore(btn, nextBtn);
+            });
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+            document.getElementById('goToPageInput').max = totalPages;
+        }
+
+        // Cập nhật số lượng kết quả
+        function updateResults() {
+            const currentResults = Math.min(filteredCustomers.length, currentPage * pageSize);
+            document.getElementById('currentResults').textContent = currentResults;
+            document.getElementById('totalResults').textContent = filteredCustomers.length;
+        }
+
+        // Thay đổi trang
+        function changePage(direction) {
+            const totalPages = Math.ceil(filteredCustomers.length / pageSize);
+            if (direction === 'prev' && currentPage > 1) {
+                currentPage--;
+            } else if (direction === 'next' && currentPage < totalPages) {
+                currentPage++;
+            }
+            renderCustomers();
+        }
+
+        // Chuyển đến trang cụ thể
+        function goToPage() {
+            const pageInput = document.getElementById('goToPageInput').value;
+            const totalPages = Math.ceil(filteredCustomers.length / pageSize);
+            if (pageInput && pageInput >= 1 && pageInput <= totalPages) {
+                currentPage = parseInt(pageInput);
+                renderCustomers();
+            }
+        }
+
+        // Thay đổi kích thước trang
+        function togglePageSizeDropdown() {
+            const sizes = [10, 20, 50];
+            const currentSize = parseInt(document.getElementById('pageSizeBtn').textContent);
+            const nextSize = sizes[(sizes.indexOf(currentSize) + 1) % sizes.length];
+            pageSize = nextSize;
+            document.getElementById('pageSizeBtn').innerHTML = `${nextSize} <span>▼</span>`;
+            currentPage = 1;
+            renderCustomers();
+        }
+
+        // Hiển thị modal thông tin khách hàng
+        function showCustomerModal(rowId) {
+            const customer = customers.find(c => c.rowId === rowId);
+            if (customer) {
+                document.getElementById('modalCustomerId').textContent = customer.customerId;
+                document.getElementById('modalCustomerName').textContent = customer.name;
+                document.getElementById('modalPhoneNumber').textContent = customer.phoneNumber;
+                document.getElementById('modalEmail').textContent = customer.email || 'Chưa cập nhật';
+                document.getElementById('modalDeadline').textContent = customer.deadline || 'Chưa cập nhật';
+                document.getElementById('modalCustomerSource').textContent = customer.customerSource || 'Chưa cập nhật';
+                document.getElementById('modalAssignedStaff').textContent = customer.assignedStaff || 'Chưa cập nhật';
+                document.getElementById('modalStatus').textContent = getStatusText(customer.status);
+                document.getElementById('customerModal').dataset.rowId = rowId;
+                document.getElementById('customerModal').style.display = 'flex';
+            }
+        }
+
+        // Đóng modal thông tin khách hàng
+        function closeCustomerModal() {
+            document.getElementById('customerModal').style.display = 'none';
+        }
+
+        // Hiển thị modal xác nhận xóa
+        function showDeleteConfirmModal() {
+            closeCustomerModal();
+            document.getElementById('deleteConfirmModal').style.display = 'flex';
+        }
+
+        // Đóng modal xác nhận xóa
+        function closeDeleteConfirmModal() {
+            document.getElementById('deleteConfirmModal').style.display = 'none';
+        }
+
+        // Xác nhận xóa khách hàng
+        function confirmDeleteCustomer() {
+            const rowId = document.getElementById('customerModal').dataset.rowId;
+            customers = customers.filter(customer => customer.rowId !== rowId);
+            filteredCustomers = filteredCustomers.filter(customer => customer.rowId !== rowId);
+            localStorage.setItem('customers', JSON.stringify(customers));
+            closeDeleteConfirmModal();
+            renderCustomers();
+        }
+
+        // Khởi tạo khi trang được tải
+        window.onload = function () {
+            renderCustomers();
+        };
+    </script>
+</body>
+
+</html>

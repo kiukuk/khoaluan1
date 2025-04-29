@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Khách Hàng</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Averta+Std+CY:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="../Public/css/test2.css">
+    <link rel="stylesheet" href="../Public/css/add-customer.css">
+    <!-- Thêm Quill.js CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Spe1ONBMGo.png" alt="Logo">
+              
+            </div>
+            <div class="menu-right">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/gFm7CJOc6m.png" alt="Hỗ Trợ"
+                    class="icon">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/OaQkGHAx1s.png" alt="Cờ"
+                    class="icon flag">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xq6CkhC2ow.png" alt="Thông Báo"
+                    class="icon">
+                <div class="user">
+                    <span>Vũ Thị Kiều Cúc</span>
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/xkBp40jWqg.png"
+                        alt="Ảnh Đại Diện" class="avatar">
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav class="cms-menu">
+            <a href="tongquan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/RDy2m7oGdJ.png"
+                        alt="Tổng Quan" class="menu-icon">
+                    <span>Tổng quan</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/Kb6jp7Zyvp.png"
+                        alt="Tài Khoản" class="menu-icon">
+                    <span>Tài khoản</span>
+                </div>
+            </a>
+            <a href="hopdong.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/P3fdYxESjy.png"
+                        alt="Hợp Đồng" class="menu-icon">
+                    <span>Hợp đồng</span>
+                </div>
+            </a>
+            <a href="taikhoan.html" class="menu-link">
+                <div class="menu-item selected">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/CSD90LxuhK.png"
+                        alt="Khách Hàng" class="menu-icon">
+                    <span>Khách hàng</span>
+                </div>
+            </a>
+            <a href="baocao.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/beO9yV4pmy.png"
+                        alt="Báo Cáo" class="menu-icon">
+                    <span>Báo cáo</span>
+                </div>
+            </a>
+            <a href="dulieu.html" class="menu-link">
+                <div class="menu-item">
+                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-11/kL7HC5Fh6x.png"
+                        alt="Dữ Liệu" class="menu-icon">
+                    <span>Dữ liệu</span>
+                </div>
+            </a>
+        
+        </nav>
+
+        <!-- Nội dung chính -->
+        <section class="content">
+            <div class="header-content1">
+                <div class="breadcrumb" style="display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; font-size: 14px;">
+                    <a href="khachhang.html" style="color: #666; text-decoration: none;">Khách hàng</a>
+                    <span style="color: #666;">></span>
+                    <span style="color: #000000;">Chỉnh sửa thông tin khách hàng</span>
+                </div>
+                <div class="actions">
+                    <button class="save-btn" onclick="saveCustomer()">Lưu</button>
+                    <button class="cancel-btn" onclick="window.location.href='khachhang.html'">Hủy bỏ</button>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <div class="form-panels">
+                    <!-- Bảng Thông tin khách hàng -->
+                    <div class="panel panel-left">
+                        <div class="form-section">
+                            <h4>Thông tin khách hàng</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Tên khách hàng <span class="required">*</span></label>
+                                    <input type="text" id="customerName" placeholder="Nhập tên khách hàng">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mã số thuế <span class="required">*</span></label>
+                                    <input type="text" id="taxCode" placeholder="Nhập mã số thuế">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Mã khách hàng <span class="info-icon">ⓘ</span></label>
+                                    <input type="text" id="customerId" readonly value="HD000234">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên sản phẩm/dịch vụ/giải pháp</label>
+                                    <input type="text" id="productService"
+                                        placeholder="Nhập tên sản phẩm/dịch vụ khách hàng lựa chọn">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Số điện thoại <span class="required">*</span></label>
+                                    <input type="text" id="phoneNumber" placeholder="Nhập số điện thoại">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="email" placeholder="Nhập email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nguồn khách hàng</label>
+                                    <input type="text" id="customerSource" placeholder="Nhập nguồn">
+                                </div>
+                                <div class="form-group">
+                                    <label>Khu vực</label>
+                                    <select id="area">
+                                        <option value="">Chọn khu vực</option>
+                                        <option value="Hà Nội">Hà Nội</option>
+                                        <option value="Tp Hồ Chí Minh">Tp Hồ Chí Minh</option>
+                                        <option value="Đà Nẵng">Đà Nẵng</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Hạn bàn giao</label>
+                                    <div class="date-input">
+                                        <input type="date" id="deadline">
+                                        <span class="calendar-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="label-with-action">
+                                        <label>Nhân viên phụ trách</label>
+                                     
+                                    </div>
+                                    <select id="assignedStaff">
+                                        <option value="">Chọn nhân viên</option>
+                                        <!-- Danh sách nhân viên sẽ được thêm bằng JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Tài liệu liên quan</h4>
+                            <div class="form-group">
+                                <div class="upload-area">
+                                    <input type="file" id="documents" multiple>
+                                    <p>+ Kéo thả hoặc tải tệp lên từ thiết bị</p>
+                                    <p class="upload-info">Loại định dạng cho phép: .doc, .pdf, .excel. Kích thước tối
+                                        đa: 5MB.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="dropdown-toggle" onclick="toggleDropdown('descriptionDropdown')">Mô tả chi tiết
+                                <span class="dropdown-arrow">▼</span>
+                            </h4>
+                            <div id="descriptionDropdown" class="dropdown-content" style="display: none;">
+                                <div id="descriptionEditor" style="height: 150px;"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4 class="dropdown-toggle" onclick="toggleDropdown('commentsDropdown')">Bình luận <span
+                                    class="dropdown-arrow">▼</span></h4>
+                            <div id="commentsDropdown" class="dropdown-content" style="display: none;">
+                                <div class="comments-list" id="commentsList">
+                                    <!-- Bình luận sẽ được thêm bằng JavaScript -->
+                                </div>
+                                <div class="comment-input-area">
+                                    <textarea id="newComment" placeholder="Viết bình luận..."></textarea>
+                                    <div class="comment-actions">
+                                        <button onclick="addLinkToComment()">Chèn link</button>
+                                        <button onclick="postComment()">Đăng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bảng Thông tin thêm -->
+                    <div class="panel panel-right">
+                        <div class="form-section">
+                            <h4>Thông tin thêm</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Trạng thái</label>
+                                    <select id="status">
+                                        <option value="">Chọn trạng thái</option>
+                                        <option value="not-started">Chưa bắt đầu</option>
+                                        <option value="in-progress">Đang làm</option>
+                                        <option value="handover">Bàn giao</option>
+                                        <option value="completed">Hoàn thành</option>
+                                        <option value="paused">Tạm ngưng</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Tên công ty (nếu có)</label>
+                                    <input type="text" id="companyName" placeholder="Nhập tên công ty">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Lĩnh vực</label>
+                                    <input type="text" id="field" placeholder="Nhập lĩnh vực">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Thêm Tài Khoản -->
+    <div class="modal" id="addAccountModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm tài khoản</h3>
+                <button class="close-btn" onclick="hideAddAccountModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-columns">
+                    <div class="modal-column-left">
+                        <div class="form-group">
+                            <label for="fullName">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="fullName" placeholder="Vũ Thị Kiều Cúc" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại <span class="required">*</span></label>
+                            <input type="text" id="phone" placeholder="phambaonam90" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" placeholder="vuthikieucuc21@gmail.com" />
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Ghi chú</label>
+                            <textarea id="note" placeholder="Ghi chú"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-column-right">
+                        <div class="form-group">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" id="address"
+                                placeholder="Ngõ 75 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội" />
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Chức vụ</label>
+                            <select id="position">
+                                <option value="">Chọn chức vụ</option>
+                                <option value="Quản lý">Quản lý</option>
+                                <option value="Nhân viên">Nhân viên</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Trạng thái hoạt động</label>
+                            <select id="status">
+                                <option value="active">Đang hoạt động</option>
+                                <option value="inactive">Tạm ngưng</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section permissions-section">
+                    <h4>Phân quyền</h4>
+                    <div class="permissions-list">
+                        <div class="permission-item">
+                            <input type="checkbox" id="permAdd" value="add">
+                            <label for="permAdd">Thêm</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="permUpdate" value="update">
+                            <label for="permUpdate">Cập nhật</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="permDelete" value="delete">
+                            <label for="permDelete">Xóa</label>
+                        </div>
+                        <div class="permission-item">
+                            <input type="checkbox" id="permView" value="view">
+                            <label for="permView">Xem danh sách</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="update-btn" onclick="addAccount()">Cập nhật</button>
+                <button class="cancel-btn" onclick="hideAddAccountModal()">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm Quill.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Khởi tạo Quill editor
+        const quill = new Quill('#descriptionEditor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'font': [] }, { 'size': ['small', false, 'large', 'huge'] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    ['link'],
+                    ['clean']
+                ]
+            },
+            placeholder: 'Nhập mô tả chi tiết...'
+        });
+
+        // Danh sách bình luận (giả lập dữ liệu)
+        let comments = JSON.parse(localStorage.getItem('comments')) || [
+            { user: "Nguyễn Văn A", content: "Đây là bình luận đầu tiên.", timestamp: "01/01/2025 10:00" },
+            { user: "Trần Thị B", content: "Tôi đồng ý với ý kiến trên. Xem thêm tại <a href='https://example.com'>đây</a>.", timestamp: "01/01/2025 10:05" }
+        ];
+
+        // Hiển thị danh sách bình luận
+        function renderComments() {
+            const commentsList = document.getElementById('commentsList');
+            commentsList.innerHTML = '';
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.classList.add('comment');
+                commentElement.innerHTML = `
+                    <p class="comment-header"><span class="user">${comment.user}</span> - <span class="timestamp">${comment.timestamp}</span></p>
+                    <p class="comment-content">${comment.content}</p>
+                `;
+                commentsList.appendChild(commentElement);
+            });
+        }
+
+        // Mở/đóng dropdown
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = dropdown.previousElementSibling.querySelector('.dropdown-arrow');
+            if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+                dropdown.style.display = 'block';
+                arrow.textContent = '▲';
+            } else {
+                dropdown.style.display = 'none';
+                arrow.textContent = '▼';
+            }
+        }
+
+        // Chèn link vào bình luận
+        function addLinkToComment() {
+            const newComment = document.getElementById('newComment');
+            const url = prompt('Nhập URL của liên kết:');
+            if (url) {
+                const linkText = prompt('Nhập văn bản hiển thị cho liên kết (nếu để trống sẽ dùng URL):') || url;
+                const linkHtml = `<a href="${url}" target="_blank">${linkText}</a>`;
+                newComment.value += linkHtml;
+            }
+        }
+
+        // Đăng bình luận
+        function postComment() {
+            const newComment = document.getElementById('newComment');
+            const content = newComment.value.trim();
+            if (!content) {
+                alert('Vui lòng nhập nội dung bình luận!');
+                return;
+            }
+
+            const timestamp = new Date().toLocaleString("vi-VN", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+
+            const comment = {
+                user: "Vũ Thị Kiều Cúc", // Giả lập user hiện tại
+                content: content,
+                timestamp: timestamp
+            };
+
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+            renderComments();
+            newComment.value = '';
+        }
+
+        // Giả lập dữ liệu nhân viên từ localStorage
+        let staffList = JSON.parse(localStorage.getItem('staffList')) || [
+            { id: 1, employeeId: "NV000001", name: "Nguyễn Văn A", phone: "0123456789", email: "nguyenvana@example.com", status: "active", createdDate: "01/01/2025 10:00", address: "Chưa cập nhật", position: "Chưa cập nhật", note: "Không có ghi chú", rowId: `row-${Date.now()}`, permissions: [] },
+            { id: 2, employeeId: "NV000002", name: "Trần Thị B", phone: "0987654321", email: "tranthib@example.com", status: "active", createdDate: "01/01/2025 10:00", address: "Chưa cập nhật", position: "Chưa cập nhật", note: "Không có ghi chú", rowId: `row-${Date.now() + 1}`, permissions: [] }
+        ];
+
+        // Cập nhật danh sách nhân viên phụ trách
+        function updateStaffList() {
+            const assignedStaffSelect = document.getElementById('assignedStaff');
+            assignedStaffSelect.innerHTML = '<option value="">Chọn nhân viên</option>';
+            staffList.forEach(staff => {
+                const option = document.createElement('option');
+                option.value = staff.name;
+                option.textContent = staff.name;
+                assignedStaffSelect.appendChild(option);
+            });
+        }
+
+        // Hiển thị modal "Thêm tài khoản"
+        function showAddAccountModal() {
+            const modal = document.getElementById('addAccountModal');
+            if (modal) {
+                modal.style.display = 'flex';
+            } else {
+                console.error("Modal 'addAccountModal' không tồn tại!");
+            }
+        }
+
+        // Đóng modal "Thêm tài khoản" (không chuyển hướng)
+        function hideAddAccountModal() {
+            const modal = document.getElementById('addAccountModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+            // Reset form
+            document.getElementById("fullName").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("position").value = "";
+            document.getElementById("status").value = "active";
+            document.getElementById("note").value = "";
+            // Reset permissions checkboxes
+            document.getElementById("permAdd").checked = false;
+            document.getElementById("permUpdate").checked = false;
+            document.getElementById("permDelete").checked = false;
+            document.getElementById("permView").checked = false;
+        }
+
+        // Tạo mật khẩu ngẫu nhiên (ẩn chức năng này nhưng vẫn giữ lại)
+        function generatePassword() {
+            const password = Math.random().toString(36).slice(2, 10);
+            return password;
+        }
+
+        // Lưu tài khoản mới (không chuyển hướng)
+        function addAccount() {
+            const fullName = document.getElementById("fullName").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const position = document.getElementById("position").value;
+            const status = document.getElementById("status").value;
+            const note = document.getElementById("note").value;
+
+            // Lấy quyền hạn từ các checkbox
+            const permissions = [];
+            if (document.getElementById("permAdd").checked) permissions.push("add");
+            if (document.getElementById("permUpdate").checked) permissions.push("update");
+            if (document.getElementById("permDelete").checked) permissions.push("delete");
+            if (document.getElementById("permView").checked) permissions.push("view");
+
+            if (!fullName || !phone || !email) {
+                alert("Vui lòng điền đầy đủ các trường bắt buộc!");
+                return;
+            }
+
+            let employeeIdCounter = parseInt(localStorage.getItem('employeeIdCounter')) || 1;
+            const employeeId = `NV${String(employeeIdCounter).padStart(6, "0")}`;
+            employeeIdCounter++;
+            localStorage.setItem('employeeIdCounter', employeeIdCounter);
+
+            const createdDate = new Date().toLocaleString("vi-VN", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+
+            const newStaff = {
+                id: employeeIdCounter - 1,
+                employeeId: employeeId,
+                name: fullName,
+                fullName: fullName,
+                phone: phone,
+                email: email,
+                password: generatePassword(), // Tạo mật khẩu ngẫu nhiên nhưng không hiển thị
+                createdDate: createdDate,
+                status: status,
+                address: address || "Chưa cập nhật",
+                position: position || "Chưa cập nhật",
+                note: note || "Không có ghi chú",
+                rowId: `row-${Date.now()}`,
+                permissions: permissions
+            };
+
+            staffList.push(newStaff);
+            localStorage.setItem('staffList', JSON.stringify(staffList));
+            updateStaffList();
+            document.getElementById('addAccountModal').style.display = 'none';
+
+            // Reset form
+            document.getElementById("fullName").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("position").value = "";
+            document.getElementById("status").value = "active";
+            document.getElementById("note").value = "";
+            document.getElementById("permAdd").checked = false;
+            document.getElementById("permUpdate").checked = false;
+            document.getElementById("permDelete").checked = false;
+            document.getElementById("permView").checked = false;
+        }
+
+        // Lấy bộ đếm từ localStorage hoặc khởi tạo từ 1
+        let customerIdCounter = parseInt(localStorage.getItem('customerIdCounter')) || 1;
+
+        // Hàm tạo mã khách hàng
+        function generateCustomerId() {
+            const idNumber = customerIdCounter.toString().padStart(6, '0');
+            return `HD${idNumber}`;
+        }
+
+        // Gán mã khách hàng và cập nhật danh sách nhân viên khi trang được tải
+        window.onload = function () {
+            document.getElementById('customerId').value = generateCustomerId();
+            updateStaffList();
+            renderComments();
+        };
+
+        function saveCustomer() {
+            const customerName = document.getElementById('customerName').value;
+            const taxCode = document.getElementById('taxCode').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            if (!customerName || !taxCode || !phoneNumber) {
+                alert('Vui lòng điền đầy đủ các trường bắt buộc!');
+                return;
+            }
+
+            const description = quill.root.innerHTML;
+
+            const customer = {
+                name: customerName,
+                taxCode: taxCode,
+                phoneNumber: phoneNumber,
+                customerId: document.getElementById('customerId').value,
+                productService: document.getElementById('productService').value || 'Chưa cập nhật',
+                email: document.getElementById('email').value || 'Chưa cập nhật',
+                customerSource: document.getElementById('customerSource').value || 'Chưa cập nhật',
+                area: document.getElementById('area').value || 'Chưa cập nhật',
+                deadline: document.getElementById('deadline').value || 'Chưa cập nhật',
+                assignedStaff: document.getElementById('assignedStaff').value || 'Chưa cập nhật',
+                status: document.getElementById('status').value,
+                companyName: document.getElementById('companyName').value || 'Chưa cập nhật',
+                field: document.getElementById('field').value || 'Chưa cập nhật',
+                description: description || 'Chưa cập nhật',
+                comments: comments
+            };
+
+            let customers = JSON.parse(localStorage.getItem('customers')) || [];
+            customers.push(customer);
+            localStorage.setItem('customers', JSON.stringify(customers));
+
+            customerIdCounter++;
+            localStorage.setItem('customerIdCounter', customerIdCounter);
+
+            window.location.href = 'khachhang.html';
+        }
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'92f9a9671acdbd17',t:'MTc0NDUzMzY1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9303b7903abbbfc5',t:'MTc0NDYzOTA5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>

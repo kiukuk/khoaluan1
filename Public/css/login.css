@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+    flex: 1;
+    background: #e6f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.illustration img {
+    max-width: 100%;
+    height: auto;
+}
+
+.login-box {
+    flex: 1;
+    background: #fff;
+    padding: 60px 40px;
+    position: relative;
+}
+
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lang-dropdown {
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    position: absolute;
+    right: 0;
+    margin-top: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lang-btn:hover+.lang-dropdown,
+.lang-dropdown:hover {
+    display: block;
+}
+
+.lang-dropdown div {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.lang-dropdown div:hover {
+    background-color: #f0f0f0;
+}
+
+.login-form {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.logo .blue {
+    color: #00aaff;
+}
+
+.logo .red {
+    color: red;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056cc;
+}
